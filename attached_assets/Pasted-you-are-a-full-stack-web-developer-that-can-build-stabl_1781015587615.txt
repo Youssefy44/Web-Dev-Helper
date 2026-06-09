@@ -1,0 +1,622 @@
+you are a full stack web developer that can build stable and advanced web-applications, I want you to build an advanced web-app that it should be used as a reference and a cheat sheet for a borland groover appointment setter representative, I want you to use all the useful web tools to build it,and I am going to provide you with notes and website as a references, I want you to extract the info from the references and use it in the web-app, I want you to add advanced functions like adding notes like google notes that updates the web-page file in the real time and you ca search by key words and add some function that can help you within the call like an ai agent that you can ask him and provide you with the next step and the info needed to answer that caller question and add some checkup function that checks if the customer eligibility forr our services and some visuals that can be used to make the info easy and her is the source "General Information
+BG # 904-398-7205
+⦁    We support Gastroenterology and Hepatology only. Including (Diabetes and Weight loss)
+⦁    Always check the Scheduling Cheat Sheet in SharePoint before scheduling any appointment.
+⦁    Main tools:
+⦁    Talkdesk
+⦁    Teams
+⦁    Outlook
+⦁    SharePoint (Cheat Sheet)
+⦁    Phreesia
+Phreesia
+Used to send patients:
+⦁    Pre-registration links
+⦁    Appointment documents/forms
+⦁    EHR: Click the blue planet button.
+⦁    Chart: 4th tab from the left > Patient Chart.
+⦁    To create or view appointment: Go to Task > App Search.
+⦁    Crucial Rule: Do not open anything else under any circumstances.
+Nextgen PM Primary Uses
+⦁    Schedule Office Visits and Procedures
+⦁    Confirm Appointments
+⦁    Update Demographics
+⦁    Check for Hospital Encounters / Recalls
+⦁    Bad Debt
+⦁    Verification of HIPAA
+Nextgen EHR Primary Uses
+⦁    Medication Renewals
+⦁    Telephone Communications
+⦁    Referrals
+⦁    Medical Questionnaire
+⦁    Patient Correspondence
+⦁    Create New Patient Encounters
+⦁    Imaging/ Lab Orders
+⦁    Verification of HIPAA
+Patient Types
+Established Patient
+A patient who has had at least one gastro-related office visit with a "Kept" status.
+New Patient
+A patient who has never had a gastro-related office visit with a "Kept" status.
+Appointment Types
+Office Visits
+⦁    New Patient Consult
+⦁    Follow-Up (last visit within 1 year)
+⦁    Long Follow-Up (last visit over 1 year ago and/or approved provider switch)
+⦁    Hospital Follow-Up (HFU)
+Procedures
+⦁    DAP (Direct Access Procedure) Colonoscopy
+⦁    Endoscopy Recall
+Hospital Follow-Up (HFU)
+Established Patients
+⦁    Always schedule with their established provider.
+New Patients
+⦁    If a provider is listed under the Hospital D/C Follow-Up field, schedule with that provider.
+⦁    If no encounter is available, follow up through the HFU Teams Chat.
+Insurance Questions
+We do not discuss:
+⦁    Benefits
+⦁    Coverage
+⦁    Copays
+⦁    Deductibles
+⦁    Coinsurance
+⦁    Payment arrangements
+Process
+⦁    Warm transfer to the Insurance Team or provide their contact information.
+⦁    Insurance Chat (Pre-Cert Team) is for office-visit-related insurance questions only.
+Teams Channels
+Patient Support Services Channel
+⦁    Theta Chat: Questions can be posted.
+⦁    General Chat: Read-only; do not post questions.
+Waitlist Rules
+Eligible
+⦁    Office visits only.
+Not Eligible
+⦁    Procedures (including colonoscopies and endoscopies).
+Requirement
+⦁    The patient must already have an office visit scheduled before being added to the waitlist.
+Medical Questionnaire
+Required For
+⦁    Procedures
+Not Required For
+⦁    Office visits
+Responses must be clear Yes or No answers.
+Colonoscopy Scheduling
+DAP (Direct Access Procedure) Colonoscopy
+We may schedule only if:
+⦁    Patient passes screening questions.
+⦁    Patient passes the medical questionnaire.
+⦁    Patient meets eligibility requirements.
+Eligibility Criteria
+⦁    Age 45–74
+⦁    Appropriate history
+⦁    Referral is complete and ready
+Patients younger than 45 or older than 74 require an office visit first.
+Standard Colonoscopy
+We do not schedule initial standard colonoscopies.
+Process:
+1.    Schedule an office visit.
+2.    Provider determines whether a colonoscopy is needed.
+3.    Office schedules the procedure.
+Colonoscopy Recall
+May be scheduled when the patient has a previous colonoscopy history and is due for recall.
+
+EGD Scheduling Guidelines
+Initial Endoscopy (EGD / Upper Endoscopy / PAN)
+⦁    Rule: Never schedule directly.
+⦁    Requirement: Patient must first complete an office visit.
+EGD Recall Requirements
+Schedule as a Recall only if the patient meets all of the following criteria:
+⦁    Status: Established Patient only (no new patients).
+⦁    Age: 45 to 74 years old.
+⦁    History: Must have a previous EGD in our system.
+⦁    Order: Must have a recall request from the doctor.
+⦁    Location Restriction: Not a Volusia patient (special rules apply).
+Note: Endoscopy Recalls can be scheduled directly when due, provided all the above conditions are met.Referral Guidelines
+
+Schedule an office visit if the referral includes:
+⦁    Liver Disease
+⦁    Liver Transplant
+⦁    Cirrhosis
+⦁    Alcoholic Cirrhosis
+⦁    Hepatitis B or C
+⦁    Autoimmune Hepatitis
+⦁    Fatty Liver
+⦁    Liver Lesion
+⦁    Abnormal/Elevated Liver Function Tests (LFTs)
+⦁    Drug-Induced Liver Disease
+⦁    NASH
+⦁    MASLD
+⦁    MASH
+⦁    Hepatic Fibrosis
+⦁    Hepatic Steatosis
+⦁    Sarcoidosis
+⦁    Primary Biliary Cholangitis (PBC)
+Referral Review
+Always review:
+⦁    Reason for Referral
+⦁    Diagnoses/Problems
+Insurance Information Collection
+Collect:5
+⦁    Member ID / Policy Number
+⦁    Group Number (if applicable)
+⦁    Payor ID (if applicable)
+⦁    Provider Contact Number (back of insurance card)
+Medicare
+May also collect:
+⦁    Medicare Number
+Additional Notes
+Cologuard
+⦁    Stool-based colorectal cancer screening test.
+High-Volume Days
+⦁    Monday and Tuesday are typically busiest.
+⦁    AI calls occur on Mondays.
+KPI Goals
+MetricGoalCalls Per Day60+Adherence90%AHT6 MinutesQuality90%
+Quick Reference
+SituationActionNew patient + HFU + provider listedSchedule with listed providerNew patient + HFU + no provider listedContact Hospital Follow-Up TeamEstablished patient + HFUSchedule with established providerInsurance questionsTransfer to Insurance TeamInitial colonoscopyOnly schedule DAP if eligibleInitial endoscopySchedule office visit firstWaitlist requestOffice visits only; patient must already have appointment
+
+
+Vlousia Three Practices 
+Port orange 
+Ormond Beach
+Deltona
+They all have the scheduling roles and act as one entity.
+Follow Up vs. Long Follow Up
+Step 1: Check History
+⦁    Look at the patient's appointment history.
+⦁    Only count "Kept" appointments (attended).
+⦁    Ignore cancelled or no-show appointments.
+Step 2: Determine Type
+⦁    Follow Up: Last kept appointment was LESS than 1 year ago.
+⦁    Long Follow Up: Last kept appointment was MORE than 1 year ago.
+
+
+
+=== ALLERGY ===
+• Department/Overview: Any calls related to allergy in reference to Dr. Watkins only. (Never touch (Resch/Cncl) the appointments for Dr.Watkins)
+• Routing Action: -> Warm Transfer
+
+=== COLLECTIONS / BILLING ===
+Department/Overview: Any calls related to balance, credit, refunds, invoice, payment arrangements, or billing questions
+are transferred to Billing/Collection. Any patient that has a balance over 1000.00 we cannot schedule a procedure for them. Instead, we warm transfer to collections.
+However you can reschedule their procedure or office visit.
+• Routing Action: -> Warm Transfer
+
+=== FINANCIAL COUNSELOR ===
+• Department/Overview: Calls regarding estimated cost questions for an upcoming scheduled procedure. Make sure to EMAIL Financial Counselor group and they will reach out to the patient.
+• Routing Action: -> Email (FinancialCounselors@borlandgroover.com) / Warm Transfer
+Exception: Copay arrangement for future dated OV, Transfer to office.
+
+=== HIS (MEDICAL RECORDS) ===
+• Department/Overview: Any calls related to obtaining / requesting patients medical records are transferred to HIS department.
+• Routing Action: -> Warm Transfer
+
+=== HOSPITAL DESK ===
+• Department/Overview: Any Patient calling requesting a consult are transferred to Hospital Desk.
+• Routing Action: -> Warm Transfer
+
+=== HUMAN RESOURCES ===
+⦁    Department/Overview: Call indicating employee verification or requesting career.
+• Routing Action: -> Email / Blind Transfer
+
+=== IMAGING ===
+• Department/Overview: Calls related to imaging tests or scheduling an imaging test are transferred to the Imaging department.
+• Special Scheduling Notes:
+⦁    Blind Transfer calls for the following tests: CT, MRI, Ultrasound, Gastric Emptying Study, Barium Swallow, Barium Esophagram, Dexa, HIDA, Sitz Marker, Small Bowel Follow Through, Barium Enema.
+⦁    Volusia South and Santa Rosa Patients: For imaging scheduling requests, send a message to the clinical team. (SLA for Clinical Team: 24 Hrs. Volusia South and Santa Rosa: 48 Hrs)
+⦁    Paracentesis, EUS, Fibroscans, or anything related: Send a message to the clinical team. (SLA for Clinical Team: 24 Hrs. Volusia South and Santa Rosa: 48 Hrs)
+
+
+=== INFUSION ===
+⦁    Department/Overview: All calls related to infusion / Remicade or scheduling an infusion are transferred to the appropriate office location (Infusion Department).
+⦁    Exception: B12/Iron Infusion send a message to Clinical Team. (SLA for Clinical Team: 24 Hrs. Volusia South and Santa Rosa: 48 Hrs)
+⦁    Routing Action: -> Warm Transfer
+
+=== PRE-CERT ===
+• Department/Overview: Any calls to verify authorization, prior authorization, or insurance verification (any insurance related questions). If a patient is requesting their copay amount, call pre-cert for that amount.
+• Routing Action: -> Warm Transfer
+
+• Department/Overview: Requests related to medication authorization, prior authorization, or approval of prescribed medications.
+
+• Balance Questions
+  -> Collections
+• Billing Questions
+  -> Collections
+• Pay for Procedure
+  -> Collections
+• Refunds
+  -> Collections
+
+=== CLINICAL MESSAGING === SLA for Clinical Team: 24 Hrs. (Volusia South and Santa Rosa: 48 Hrs)
+⦁    Lab Results / Test Results / Imaging results
+  -> Send a clinical message
+• Medication Authorization
+  -> Send a clinical message
+• Paracentesis Request
+  -> Send Message to Clinical Team
+• EUS / Fibroscan Scheduling & Questions
+  -> Send a clinical message
+
+=== IMAGING SCHEDULING ===
+• General Imaging Scheduling (CT, MRI, Ultrasound, Gastric Emptying, Barium Swallow/Esophagram/Enema, Dexa, HIDA, Sitz Marker, Small Bowel)
+  -> Imaging Department (Scheduling, Rescheduling, Canceling)
+⦁    Volusia South & Santa Rosa Patients (Imaging Scheduling Requests)
+  -> EXCEPTION: Send message to clinical team
+
+=== INSURANCE & PRECERT ===
+• Prior Authorization for Office Visits
+  -> Precert
+• Insurance Questions
+  -> Precert
+• Procedure Cost (Copay / Insurance for procedure)
+  -> Financial Counselor
+
+=== RECORDS & OFFICE ===
+• Medical Records (NOT test results or labs)
+  -> HIS
+• Copay Arrangement for Future Dated Office Visits (OV)
+  -> Transfer to office
+
+Translation services: in case you face a customer that does not speak English and ask for another language.
+
+
+⦁    Disposition Code: Appointment Confirmation
+Definition: Patient called to confirm or find out about an already scheduled appointment
+⦁    Disposition Code: Canceled Appointment
+Definition: Patient called to cancel their appointment or procedure.
+⦁    Disposition Code: Appointment Scheduled
+Definition: New or Established patient scheduled an appointment
+⦁    Disposition Code: Appointment Rescheduled
+Definition: Patient called to change date or time of previously scheduled appointment
+⦁    Disposition Code: Sooner Appointment / Waitlist
+Definition: Patient called to request being placed on the waitlist for a sooner appointment
+⦁    Disposition Code: Clinical Message
+Definition: Patient called to speak to someone in the office
+⦁    Disposition Code: Urgent Clinical Transfer
+Definition: Patient transferred to Office (based on Urgent List)
+⦁    Disposition Code: Non Urgent Transfer
+Definition: Patient requires non-clinical intervention from practice or other outside department, insurance inquiry. (When transferring to any department other than office or clinical)
+⦁    Disposition Code: Demographics
+Definition: Patient called to update any item in their demographics (name, address, insurance, HIPAA, Contact preferences, email or phone number)
+⦁    Disposition Code: Left Message
+Definition: Left message for patient to call back from a call back request
+⦁    Disposition Code: Call Back - No Answer
+Definition: Call Back request with no response or answer from patient
+⦁    Disposition Code: Other
+Definition: Any call not listed above, requires notes to describe the issue the patient called about
+⦁    Disposition Code: General Inquiry
+Definition: Patient called for fax or office number, address, directions, provider look up and no appointment booked, 3rd party called inquiring patient appointment status
+⦁    Disposition Code: Decline to schedule
+Definition: Referral Patient declined to schedule an appointment
+3-Way Call (Warm Transfer)
+Note: DO NOT USE for Interpreter services.
+1.    Select Consult
+2.    Select Favorites and find the desired department (DO NOT select Queues or Contacts).
+3.    Provide the department with the required information:
+⦁    Your name
+⦁    Patient's name and DOB
+⦁    Reason for the call
+1.    Connect the call once the receiving agent confirms they are ready.
+2.    Add consultation to merge the call (DO NOT select Transfer).
+3.    Introduce the patient to the agent.
+4.    Select Transfer to end your call.
+Blind Transfer
+Note: Inform the patient of the pending transfer and offer further assistance before proceeding.
+1.    Select Blind Transfer
+2.    Select Favorites and choose the appropriate department.
+Add a quest (Interpreter Services)
+1.    Select Add a Guest
+2.    Select Favorites
+3.    Type in Translation Services
+4.    Select the language needed.
+5.    Provide the translator with the code: "Patient Support Services"
+Begin call
+
+Medical Titles & Abbreviations
+⦁    MD: Medical Doctor (Doctor)
+⦁    DO: Doctor of Osteopathic Medicine (Doctor)
+⦁    APRN: Advanced Practice Registered Nurse (Nurse Practitioner/Specialist)
+⦁    PA: Physician Assistant (Doctor Assistant)
+
+Scheduling & Location Assignment Rules
+New Patients
+⦁    Always schedule for the location specified in the referral.
+⦁    Exception: If the patient requests a different office, you can schedule them at an alternate location. Use the patient's zip code to find a convenient location within a 20-mile radius.
+Established Patients
+⦁    By default, established patients must stay in their current/existing service area.
+⦁    Exception: You may change their location only if the patient explicitly requests to switch to a different office.
+Location & Insurance Exceptions by Region
+Volusia Location (Volusia South Umbrella)
+Volusia has 3 practices(Port orange, Ormond Beach, Deltona), but they all fall under the Volusia South umbrella. Patients must be kept within Volusia entities only.
+⦁    Insurance Exception: If the patient's insurance is not accepted at Volusia, schedule them at the St. Augustine office (provided St. Augustine accepts that specific insurance).
+⦁    Location Change Request: If a Volusia patient requests a location change, you can offer St. Augustine as it is the closest office.
+Santa Rosa Location
+⦁    Insurance Exception: If the patient's insurance is not accepted at Santa Rosa, schedule them at the Jacksonville office instead.
+Georgia Patients
+⦁    Schedule Georgia patients at either the Nassau Crossing office or the Amelia Island office (Fernandina).
+⦁    Proximity Tip: You can always see the nearest office by the mileage written down on the right side of the office name/location.
+How to Book an Appointment
+1.    Go to PM.
+2.    Click on the Tasks tab (third tab from the top).
+3.    Click on Appt Book.
+How to Look Up Patient Address/Zip Code
+(Use this workflow for new patients or established patients requesting to switch locations)
+1.    From the Appointment Search Ahead screen, click on Patient (indicated by the newspaper icon).
+2.    Access Previous Patient.
+3.    Locate the patient's Zip Code.
+4.    Click on the patient's name and click Find.
+5.    Return to Service Location and select the convenient office location based on the 20-mile radius rule or the mileage listed on the right.
+Surgery Center Assignment
+⦁    Volusia Location
+⦁    Patients assigned to the Volusia office go to the Surgery Center of Volusia for their procedures.
+⦁    Santa Rosa Location
+If a patient's insurance is not accepted at Santa Rosa for procedures, they go to Destin SC (Destin Surgery Center) instead.
+Office Visit Workflow
+Rescheduling Requests
+⦁    Time > 1 Hour Away:
+⦁    Cancel the existing appointment.
+⦁    Create a new appointment.
+⦁    Time < 1 Hour Away:
+⦁    Leave the existing appointment in place.
+⦁    Schedule the new appointment.
+⦁    Send a message to the clinical team immediately after scheduling.
+Cancellations (< 24 Hours / Same Day)
+⦁    If a patient cancels within 24 hours and refuses to reschedule:
+⦁    Cancel the appointment.
+⦁    Send a message to the Office Manager (OM) with this exact text:
+⦁    "patient called to cancel, and would not reschedule, <24 hours before appointment."
+Procedure Workflow
+Before 3:00 PM
+⦁    Cancel the old appointment and create the new one.
+⦁    Send a message to the clinical team containing both the old and new times.
+After 3:00 PM (For Same-Day or Next-Day Procedures)
+⦁    Do not cancel or reschedule.
+Perform a Warm Transfer of the patient directly to the appropriate ASC (Ambulatory Surgery Center) or Office backline.
+Office Visit Event Types
+⦁    Note: Always indicate symptoms or the reason for the visit in the details for all office visits.
+Standard In-Office Visits
+⦁    New Patient: Has never seen a BG provider and has no referral. Includes patients referred only for a "Screening Colonoscopy" if an office visit is required first.
+⦁    Consult: Has never seen a BG GI physician and is being referred for a specific problem.
+⦁    Follow Up: Last seen within 1 year.
+⦁    Liver/Specialty: Can be used for liver referrals/issues (patient must bring medical records). Check the cheat sheet for provider-specific duration preferences.
+⦁    Long Follow Up: Last seen over 1 year ago, OR is transferring from one BG provider to another.
+⦁    Liver/Specialty: Can be used for liver referrals/issues (patient must bring medical records). Check the cheat sheet for provider-specific duration preferences.
+⦁    Volusia Exception: Use this event if the patient was seen in-office by the rendering provider between 1 and 3 years ago.
+⦁    Hospital Follow Up: Seen in the hospital (Inpatient or ER) by a BG physician within the last 90 days.
+⦁    DAP Follow Up: Used only when a patient schedules an office visit after a Direct Access Procedure (DAP) or a Recall procedure.
+⦁    Interoffice Consult: An established BG provider requests a second opinion from a different BG provider. (Note: We usually reschedule these appointments).
+Telemedicine Visits
+⦁    Note: Not all providers offer Telemed. Always verify provider participation.
+⦁    Telemedicine New Patient: Virtual appointment for a brand new patient.
+⦁    Telemedicine Follow Up: Virtual appointment for a patient seen within 1 year.
+⦁    Long Follow Up Telemedicine: Virtual appointment for a patient seen over 1 year ago.
+⦁    Telemedicine Hospital Follow Up: Virtual appointment for a patient seen in the hospital (Inpatient or ER) by a BG physician within 1 year.
+Specialty & Charity Programs
+⦁    Liver Center Interoffice: Patient is referred to, or requesting a second opinion with, a liver physician. Remind the patient to bring all necessary medical records for review.
+⦁    WeCare New Patient: New to BG and has an active WeCare Referral. (WeCare Charity is a separate organization providing specialty care support to qualified Jacksonville residents).
+⦁    WeCare Follow Up: An established WeCare patient seen within 1 year. Must have WeCare Charity attached to their chart.
+⦁    WeCare Long Follow Up: An established WeCare patient seen over 1 year ago, OR transferring from one BG provider to another. Must have WeCare Charity attached to their chart.
+Procedure Event Types
+⦁    Note: For all Recalls, the status must be "Active" or "Stopped" due to no contact. Always verify the date under "First Mailing" in the Recalls Tab or check EHR notes.
+⦁    Colonoscopy Direct Access: Colonoscopy ONLY (DAP). For new patients only who meet specific DAP requirements.
+⦁    Colonoscopy Recall: Colonoscopy ONLY. Requires an applicable recall on file.
+⦁    EGD Recall: Endoscopy ONLY. Requires an applicable recall on file.
+⦁    EGD/Colonoscopy Recall: Combined Endoscopy and Colonoscopy. Requires an Office Visit (OV) and must have both recalls on file.
+TRICARE (Military Insurance) Protocol
+⦁    When a patient has TRICARE insurance, enter details using this format:
+⦁    Insurance Program: TRICARE
+⦁    Pharmacy Category: DOD (Department of Defense)
+
+
+
+Locate the Patient's Chart: Go to the visit history or encounters section.
+⦁    Find the Last Kept OV: Look for the most recent visit marked as "Kept" or "Completed."
+⦁    Note: Ignore cancelled, no-show, or future appointments.
+Verify the Doctor: Identify and use the provider name listed on that specific encounter.
+
+
+
+Procedure Follow-Up Rule
+⦁    If the patient had any of the following Event Types done:
+⦁    Colonoscopy
+⦁    Endoscopy
+⦁    Colonoscopy/Endoscopy
+Then the Next Appointment Type must be scheduled as a Recall.
+
+Exceptions: Schedule an OV (Office Visit) Instead
+⦁    Schedule the next appointment as an OV instead of a Recall if the patient meets any of the following criteria:
+⦁    Age Restriction: The patient is not eligible due to age limits.
+⦁    Presenting a Problem: The patient currently has active symptoms or medical issues.
+⦁    Referral Problem: The patient has a specific problem outlined in their referral.
+Failed Questionnaire: The patient did not pass the screening questionnaire.
+
+
+Scheduling Notes: Hospital Encounters & Eligibility
+⦁    Pre-Scheduling Requirement: Before booking any Procedure or Office Visit (OV), check for a Hospital Encounter. This encounter must be scheduled to occur before the procedure or OV takes place.
+⦁    The 90-Day Validity Check: If the patient already has a hospital encounter, check the date.
+⦁    Within 90 days: The patient is eligible to be scheduled.
+⦁    Over 90 days: The encounter is expired/invalid. You must schedule a Follow-Up (FU) or Long Follow-Up (Long FU) instead.
+Hospital Discharge (HFU): If a patient was discharged from the hospital within the last 90 days, they are most likely due for a Hospital Follow-Up (HFU).
+
+
+How to Schedule an Appointment
+1.    Navigate to Scheduling:
+2.    Click on Task, then select Appt Search.
+3.    Enter Event Type:
+4.    Input the event type based on the patient's history or scenario (e.g., a new patient requires a New Patient appointment).
+5.    Select Service Location & Provider:
+6.    For New Patients (NP): Start with the location on the referral. If the patient declines, find the nearest location to them based on their preference, request, or desire for a sooner opening.
+⦁    Note: If they don't care which doctor they see, you can select All Providers as long as the office accepts their insurance.
+⦁    For Established Patients (EST): Book with their established doctor or that doctor's extender. They can go to any location where that doctor/extender is available.
+1.    Finalize Details:
+2.    Ensure you have the correct day and correct time.
+⦁    Enter the patient's symptoms in the Details box. (Exception: Only enter the event type here when scheduling a Hospital Follow-Up).
+Important Scheduling Rules & Guardrails
+⦁    Office Visit (OV) Timing: Book appointments 2 to 3 days out. Absolutely no same-day or next-day appointments.
+⦁    Switching Doctors: Established patients cannot switch doctors unless they have an approved reason (e.g., requesting a female physician).
+⦁    Extenders: If a doctor has an extender, it will be listed in bold text. You can schedule established patients with either the doctor or the extender.
+System Shortcuts & Preferences
+⦁    Finding the Nearest Location (NP): Click on Patient Access, then Previous Patient's Chart. This automatically pulls the patient's zip code. Click Find to see the closest locations.
+⦁    Female Provider Requests: If a patient requests a female physician, you can narrow the search results down to female doctors and female extenders.
+⦁    Weekday Preference: If the patient prefers specific days of the week, you can filter and select those days during the search.
+
+
+
+Call back request
+ 
+“Hi, this is [your name] following up on your callback request. How can I help you?”
+ 
+ 
+Answering Machine
+ 
+Hello, this is [your name] calling regarding your callback request. Please call Borland Groover back at 904-398-7205. Thank you.” option 1
+ 
+ 
+No Answer
+ 
+Caller if you can hear me, I cant hear you please give Borland a call back at 904-398-7205, releasing line due to no response.
+ 
+ 
+Opening
+ 
+Thank you for calling Borland groover my name is Taylor, how can i help you today ?
+ 
+ 
+Closing
+ 
+Thank you for calling Borland groover have a great day.
+
+
+First and Last name
+
+
+
+Verify Demographics when sending a message to Clinical Team.
+ONLY as Last resort and getting permission from Lead.
+Required Information for Patient Chart Lookup
+When looking up a patient chart, you are required to have the following information:
+⦁    First Name (3 Letters)
+⦁    Last Name (3 Letters)
+Date of Birth
+
+HIPAA & Third-Party Caller Protocol
+Standard Verification
+⦁    Name Listed on HIPAA: Proceed with the call normally.
+⦁    Name NOT Listed on HIPAA: Do not disclose any clinical or financial details. Request direct authorization from the patient first.
+Commercial/Company Exception
+⦁    Third-Party Requests: If a commercial entity (such as a company) calls to schedule or cancel an appointment on behalf of a patient:
+⦁    Allowed: You can schedule or cancel the appointment.
+Strict Restriction: Do not disclose any clinical information during the call.
+Policy Holder & Mini-Chart Protocol
+⦁    Role/Relations Check: Determine if the caller/patient is the primary policy holder.
+⦁    If NOT the Primary Policy Holder:
+⦁    Search First: Look up the primary policy holder in the system to see if they already have a chart.
+⦁    Create Mini-Chart: If they are not in the system, create a mini-chart for the primary policy holder by filling out only the red mandatory fields.
+
+
+Global Protocols (Applies to All Cases)
+⦁    Phone Numbers:
+⦁    Cellphone: Enter in both Home and Cell sections.
+⦁    Home Phone Only: Enter in Home section only.
+⦁    Emails: Always ask for an email. If none is provided, check the N/A box.
+Schedule:
+NP (New Patient)
+⦁    Required Info: Gender (Assigned Birth Sex), SSN, address, phone number, email, notifications, language, PCP, pharmacy
+⦁    Insurance Info: HMO/PPO, policy number, group number, customer service number
+⦁    Gender Exception: If they refuse current gender, enter "asked but declined".
+SSN Exception: If uncomfortable, do not ask for last 4. Enter 777-77-7777. (If asked why: "Required for billing and insurance reasons.")
+Insurance Verification & Entry Protocol
+1. Secondary Insurance & Eligibility Rules
+⦁    Secondary Insurance: Never load secondary insurance by yourself.
+⦁    Future Active Date: If a patient states their insurance is not active until a future date, they must be processed as Self Pay.
+2. Payer Lookup & Search Rules
+⦁    HMO vs. PPO: Always ask the patient if their plan is HMO or PPO to locate it in the payer lookup.
+⦁    BCBS Search: When searching for Blue Cross Blue Shield, type "BCBS" into the search field.
+⦁    Dual Medicare: Enter as "Medicare complete".
+⦁    Payer List Visibility: Stretch the payer list window to see the full insurance name. Verify using the FIN CLASS (found in the third column).
+3. Policy, Group, & SSN Requirements
+⦁    Missing Policy Number: If the patient cannot provide their policy number during the call:
+⦁    Process the account as Self Pay.
+⦁    Add the patient's SSN instead.
+⦁    Enter the self-pay amount in the Mis800cellaneous Notes field.
+⦁    Group Number: It is mandatory to ask for the group number. If the patient does not have it during the call, you may proceed without it.
+4. Phone Numbers & Notes Entry
+⦁    Customer Service Number: You must obtain the insurance customer service phone number and enter it into the Contact Phone field in Insurance Maintenance.
+⦁    Note: If it does not auto-fill, ask the patient for the number.
+⦁    General Insurance Notes: Enter any additional insurance-related notes into the Notes Box located in Insurance Maintenance.
+
+Insurance Policy Holder Rule
+⦁    Condition: If the patient is not the primary policy holder.
+⦁    Action: Select the correct option under Relations/Role.
+
+
+EST (Established Patient)
+⦁    Required Info: Full demographics (address, phone number, email, notifications, language), PCP, pharmacy
+⦁    Insurance Info: HMO/PPO, policy number, group number, customer service number
+Reschedule / Cancel
+⦁    Requirements: Verify phone number and email.
+Clinical Msg
+⦁    Requirements: Verify phone number and email.
+Medication Renewal / Preps
+⦁    Requirements: Verify phone number, email, insurance, and pharmacy.
+Appointment Confirmation
+⦁    Requirements: Verify phone number and email.
+General Inquiry
+⦁    Requirements: Verify phone number and email.
+
+
+
+
+Abbreviations for locations:
+Borland Groover Endoscopy Center 
+JCE SS Jacksonville center for Endoscopy Southside
+JCE RS Jacksonville Center for Endoscopy Riverside 
+SAEC Saint Augustine Endoscopy Center 
+OPEC Orange Park Endoscopy Center 
+DSC Destin Surgery Center (Santa Rosa Beach)
+SCV Surgery Center of Volusia 
+DCEC- Durbin Crossing Endo Center- 
+NCEC- Nassau Crossing Endo Center
+Hospital Locations (Do Not Schedule at hospital except for hospital employees or if there is a note) For hospital employees you must send a task to the clinical team if the appointment is booked at the hospital. 
+BMC C Baptist Medical Center Clay 
+BMC N Baptist Medical Center Nassau (Fernandina)
+BMC D Baptist Medical Center Downtown 
+BMC S Baptist Medical Center South 
+STV RS Saint Vincent Riverside 
+STV SS Saint Vincent Southside 
+STV SJ Saint Vincent Saint John 
+STV C Saint Vincent Clay 
+AH DB Advent Health Daytona Beach (Volusia)
+OPMC Orange Park Medical Center 
+SHEC Sacred Heart Emerald Coast 
+MMC Memorial Medical Center"
+
+and I want you to fully review this web-sites and use it also as your reference and extarct all the info from it and use them in the main project 
+
+"https://borlandgroover.com/"
+"https://borlandgroover.com/allergy-immunology/"
+"https://borlandgroover.com/colonoscopy/"
+"https://borlandgroover.com/jacksonville-center-for-endoscopy/"
+"https://borlandgroover.com/imaging-center/"
+"https://borlandgroover.com/infusion-center/"
+"https://borlandgroover.com/pathology/"
+"https://borlandgroover.com/research-clinical-trials/"
+"https://borlandgroover.com/borland-groover-culture/"
+"https://borlandgroover.com/bg-foundation/"
+"https://borlandgroover.com/conditions-treated/"
+"https://borlandgroover.com/physicians/"
+"https://borlandgroover.com/physician-assistant-nurse-practitioner/"
+"https://borlandgroover.com/locations/"
+"https://borlandgroover.com/preparing-colonoscopy/"
+"https://borlandgroover.com/procedure-prep/"
+"https://borlandgroover.com/payments/"
+"https://borlandgroover.com/billing-insurance/"
+"https://borlandgroover.com/faq/"
+"https://borlandgroover.com/for-physicians/"
+"https://borlandgroover.com/patient-resources/"
+"https://borlandgroover.com/direct-access-procedures/"
+"https://borlandgroover.com/gastroenterology/"
+"https://borlandgroover.com/medical-records/"
+"https://borlandgroover.com/prescription-refill/"
+"https://borlandgroover.com/support-groups/"
+"https://borlandgroover.com/telemedicine/"

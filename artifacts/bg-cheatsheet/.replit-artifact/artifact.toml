@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "BG Appointment Setter Reference"
+version = "1.0.0"
+id = "artifacts/bg-cheatsheet"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19447
+
+[services.development]
+run = "pnpm --filter @workspace/bg-cheatsheet run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/bg-cheatsheet", "run", "build" ]
+publicDir = "artifacts/bg-cheatsheet/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19447"
+BASE_PATH = "/"
