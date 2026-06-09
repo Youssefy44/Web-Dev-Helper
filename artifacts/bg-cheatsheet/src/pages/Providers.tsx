@@ -1,12 +1,29 @@
 import { useState } from "react";
-import { Search, X, Users, Stethoscope, User, MapPin, Clock, AlertTriangle, ChevronDown, ChevronRight } from "lucide-react";
+import {
+  Search,
+  X,
+  Users,
+  Stethoscope,
+  User,
+  MapPin,
+  Clock,
+  AlertTriangle,
+  ChevronDown,
+  ChevronRight,
+} from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 type ProviderType = "MD" | "DO" | "NP" | "PA";
-type Specialty = "Gastroenterology" | "Hepatology" | "GI & Hepatology" | "Bariatric & Weight Loss" | "Diabetes & Endocrinology";
+type Specialty =
+  | "Gastroenterology"
+  | "Allergist"
+  | "Hepatology"
+  | "GI & Hepatology"
+  | "Bariatric & Weight Loss"
+  | "Diabetes & Endocrinology";
 
 interface Provider {
   name: string;
@@ -167,7 +184,7 @@ const providers: Provider[] = [
   {
     name: "Dr. Watkins",
     title: "MD",
-    specialty: "Gastroenterology",
+    specialty: "Allergist",
     locations: ["Allergy Clinic"],
     acceptsNew: false,
     telemedAvailable: false,
@@ -313,11 +330,15 @@ const titleColors: Record<ProviderType, string> = {
 };
 
 const specialtyColors: Record<string, string> = {
-  "Gastroenterology": "bg-primary/10 text-primary",
-  "Hepatology": "bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200",
-  "GI & Hepatology": "bg-orange-100 text-orange-800 dark:bg-orange-900/60 dark:text-orange-200",
-  "Bariatric & Weight Loss": "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200",
-  "Diabetes & Endocrinology": "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/60 dark:text-cyan-200",
+  Gastroenterology: "bg-primary/10 text-primary",
+  Hepatology:
+    "bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200",
+  "GI & Hepatology":
+    "bg-orange-100 text-orange-800 dark:bg-orange-900/60 dark:text-orange-200",
+  "Bariatric & Weight Loss":
+    "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200",
+  "Diabetes & Endocrinology":
+    "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/60 dark:text-cyan-200",
 };
 
 function ProviderCard({ provider }: { provider: Provider }) {
@@ -329,7 +350,11 @@ function ProviderCard({ provider }: { provider: Provider }) {
     <Card
       className={cn(
         "border transition-all",
-        hasWarnings ? "border-l-4 border-l-red-400" : isExtender ? "border-l-4 border-l-purple-400" : "border-l-4 border-l-primary"
+        hasWarnings
+          ? "border-l-4 border-l-red-400"
+          : isExtender
+            ? "border-l-4 border-l-purple-400"
+            : "border-l-4 border-l-primary",
       )}
       data-testid={`provider-${provider.name.toLowerCase().replace(/[\s.,]/g, "-")}`}
     >
@@ -338,8 +363,15 @@ function ProviderCard({ provider }: { provider: Provider }) {
         <div className="flex items-start justify-between gap-2 mb-3">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
-              <h3 className="font-bold text-sm text-foreground">{provider.name}</h3>
-              <span className={cn("text-xs font-semibold px-1.5 py-0.5 rounded", titleColors[provider.title])}>
+              <h3 className="font-bold text-sm text-foreground">
+                {provider.name}
+              </h3>
+              <span
+                className={cn(
+                  "text-xs font-semibold px-1.5 py-0.5 rounded",
+                  titleColors[provider.title],
+                )}
+              >
                 {provider.title}
               </span>
               {isExtender && (
@@ -348,7 +380,13 @@ function ProviderCard({ provider }: { provider: Provider }) {
                 </span>
               )}
             </div>
-            <span className={cn("text-xs px-2 py-0.5 rounded-full font-medium mt-1 inline-block", specialtyColors[provider.specialty] ?? "bg-muted text-muted-foreground")}>
+            <span
+              className={cn(
+                "text-xs px-2 py-0.5 rounded-full font-medium mt-1 inline-block",
+                specialtyColors[provider.specialty] ??
+                  "bg-muted text-muted-foreground",
+              )}
+            >
               {provider.specialty}
             </span>
           </div>
@@ -357,7 +395,11 @@ function ProviderCard({ provider }: { provider: Provider }) {
             className="text-muted-foreground hover:text-foreground transition-colors shrink-0 mt-0.5"
             data-testid={`provider-expand-${provider.name.toLowerCase().replace(/[\s.,]/g, "-")}`}
           >
-            {expanded ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+            {expanded ? (
+              <ChevronDown className="w-4 h-4" />
+            ) : (
+              <ChevronRight className="w-4 h-4" />
+            )}
           </button>
         </div>
 
@@ -365,7 +407,10 @@ function ProviderCard({ provider }: { provider: Provider }) {
         {hasWarnings && (
           <div className="space-y-1 mb-3">
             {provider.warnings!.map((w, i) => (
-              <div key={i} className="flex items-start gap-1.5 text-xs text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800 rounded px-2 py-1.5">
+              <div
+                key={i}
+                className="flex items-start gap-1.5 text-xs text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800 rounded px-2 py-1.5"
+              >
                 <AlertTriangle className="w-3 h-3 shrink-0 mt-0.5" />
                 <span className="font-medium">{w}</span>
               </div>
@@ -381,16 +426,24 @@ function ProviderCard({ provider }: { provider: Provider }) {
           </div>
           <div className="flex gap-1.5 flex-wrap">
             {provider.telemedAvailable && (
-              <span className="px-1.5 py-0.5 rounded bg-teal-100 text-teal-700 dark:bg-teal-900/60 dark:text-teal-200 font-medium">Telemed ✓</span>
+              <span className="px-1.5 py-0.5 rounded bg-teal-100 text-teal-700 dark:bg-teal-900/60 dark:text-teal-200 font-medium">
+                Telemed ✓
+              </span>
             )}
             {provider.dapAvailable && (
-              <span className="px-1.5 py-0.5 rounded bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-200 font-medium">DAP ✓</span>
+              <span className="px-1.5 py-0.5 rounded bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-200 font-medium">
+                DAP ✓
+              </span>
             )}
             {provider.acceptsNew && (
-              <span className="px-1.5 py-0.5 rounded bg-green-100 text-green-700 dark:bg-green-900/60 dark:text-green-200 font-medium">New Pts ✓</span>
+              <span className="px-1.5 py-0.5 rounded bg-green-100 text-green-700 dark:bg-green-900/60 dark:text-green-200 font-medium">
+                New Pts ✓
+              </span>
             )}
             {!provider.acceptsNew && (
-              <span className="px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 font-medium">Estab Only</span>
+              <span className="px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400 font-medium">
+                Estab Only
+              </span>
             )}
           </div>
         </div>
@@ -398,9 +451,14 @@ function ProviderCard({ provider }: { provider: Provider }) {
         {/* Expanded scheduling notes */}
         {expanded && (
           <div className="mt-3 pt-3 border-t border-border space-y-1.5">
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Scheduling Notes</p>
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+              Scheduling Notes
+            </p>
             {provider.schedulingNotes.map((note, i) => (
-              <div key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+              <div
+                key={i}
+                className="flex items-start gap-2 text-xs text-muted-foreground"
+              >
                 <span className="text-primary mt-0.5">•</span>
                 <span>{note}</span>
               </div>
@@ -428,33 +486,62 @@ export default function Providers() {
       p.schedulingNotes.some((n) => n.toLowerCase().includes(q)) ||
       (p.extenderOf?.toLowerCase().includes(q) ?? false);
 
-    const matchSpecialty = activeSpecialty === "All" || p.specialty === activeSpecialty;
+    const matchSpecialty =
+      activeSpecialty === "All" || p.specialty === activeSpecialty;
     const matchExtender = showExtenders || !p.extenderOf;
 
     return matchSearch && matchSpecialty && matchExtender;
   });
 
-  const physicians = filtered.filter((p) => p.title === "MD" || p.title === "DO");
-  const extenders = filtered.filter((p) => p.title === "NP" || p.title === "PA");
+  const physicians = filtered.filter(
+    (p) => p.title === "MD" || p.title === "DO",
+  );
+  const extenders = filtered.filter(
+    (p) => p.title === "NP" || p.title === "PA",
+  );
 
   return (
     <div className="space-y-6" data-testid="providers-page">
       <div>
-        <h1 className="text-2xl font-bold text-foreground tracking-tight">Provider Directory</h1>
-        <p className="text-sm text-muted-foreground mt-1">BG physicians by specialty — locations, DAP availability, and scheduling preferences</p>
+        <h1 className="text-2xl font-bold text-foreground tracking-tight">
+          Provider Directory
+        </h1>
+        <p className="text-sm text-muted-foreground mt-1">
+          BG physicians by specialty — locations, DAP availability, and
+          scheduling preferences
+        </p>
       </div>
 
       {/* Legend */}
       <div className="flex flex-wrap gap-2 text-xs">
         {[
-          { label: "Telemed ✓", cls: "bg-teal-100 text-teal-700 dark:bg-teal-900/60 dark:text-teal-200" },
-          { label: "DAP ✓", cls: "bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-200" },
-          { label: "New Pts ✓", cls: "bg-green-100 text-green-700 dark:bg-green-900/60 dark:text-green-200" },
-          { label: "Estab Only", cls: "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400" },
+          {
+            label: "Telemed ✓",
+            cls: "bg-teal-100 text-teal-700 dark:bg-teal-900/60 dark:text-teal-200",
+          },
+          {
+            label: "DAP ✓",
+            cls: "bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-200",
+          },
+          {
+            label: "New Pts ✓",
+            cls: "bg-green-100 text-green-700 dark:bg-green-900/60 dark:text-green-200",
+          },
+          {
+            label: "Estab Only",
+            cls: "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400",
+          },
         ].map(({ label, cls }) => (
-          <span key={label} className={cn("px-2 py-0.5 rounded font-medium", cls)}>{label}</span>
+          <span
+            key={label}
+            className={cn("px-2 py-0.5 rounded font-medium", cls)}
+          >
+            {label}
+          </span>
         ))}
-        <span className="text-muted-foreground ml-1 self-center">— Click any card to expand scheduling notes</span>
+        <span className="text-muted-foreground ml-1 self-center">
+          — Click any card to expand scheduling notes
+        </span>
       </div>
 
       {/* Search + filters */}
@@ -484,7 +571,7 @@ export default function Providers() {
             "text-xs px-3 py-2 rounded-md border font-medium transition-colors whitespace-nowrap",
             showExtenders
               ? "bg-purple-100 text-purple-700 border-purple-300 dark:bg-purple-900/60 dark:text-purple-200 dark:border-purple-700"
-              : "bg-muted text-muted-foreground border-border"
+              : "bg-muted text-muted-foreground border-border",
           )}
           data-testid="toggle-extenders"
         >
@@ -502,7 +589,7 @@ export default function Providers() {
               "text-xs px-3 py-1.5 rounded-full border font-medium transition-colors",
               activeSpecialty === s
                 ? "bg-primary text-primary-foreground border-primary"
-                : "bg-muted text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
+                : "bg-muted text-muted-foreground border-border hover:border-primary/40 hover:text-foreground",
             )}
             data-testid={`specialty-filter-${s.toLowerCase().replace(/\s+/g, "-")}`}
           >
@@ -514,7 +601,8 @@ export default function Providers() {
       {/* Results count */}
       {search && (
         <p className="text-xs text-muted-foreground">
-          {filtered.length} provider{filtered.length !== 1 ? "s" : ""} matching "{search}"
+          {filtered.length} provider{filtered.length !== 1 ? "s" : ""} matching
+          "{search}"
         </p>
       )}
 
@@ -542,7 +630,10 @@ export default function Providers() {
           </h2>
           <div className="p-3 bg-amber-50 border border-amber-200 dark:bg-amber-950/40 dark:border-amber-800 rounded-lg mb-3">
             <p className="text-xs text-amber-800 dark:text-amber-300">
-              <span className="font-semibold">Extender Rule:</span> Extenders appear in bold on the schedule. You can book established patients of their supervising physician with either the doctor or the extender.
+              <span className="font-semibold">Extender Rule:</span> Extenders
+              appear in bold on the schedule. You can book established patients
+              of their supervising physician with either the doctor or the
+              extender.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-3">
@@ -557,7 +648,9 @@ export default function Providers() {
         <div className="text-center py-16 text-muted-foreground">
           <Users className="w-10 h-10 mx-auto mb-3 opacity-20" />
           <p className="text-sm font-medium">No providers match your search</p>
-          <p className="text-xs mt-1">Try a different name, location, or specialty</p>
+          <p className="text-xs mt-1">
+            Try a different name, location, or specialty
+          </p>
         </div>
       )}
     </div>
