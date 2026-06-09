@@ -514,6 +514,55 @@ const CONTENT_INDEX = [
     content: "BG Main Number: 904-398-7205",
     tags: ["contact", "phone", "number", "BG", "904-398-7205"],
   },
+  // ── Provider Directory ──
+  {
+    section: "Provider Directory",
+    title: "Dr. Watkins — ALLERGY ONLY",
+    content: "Dr. Watkins is an allergy provider, NOT a GI provider. NEVER reschedule or cancel appointments for Dr. Watkins. All calls related to Dr. Watkins must be warm transferred to the Allergy department.",
+    tags: ["Watkins", "allergy", "warm transfer", "do not reschedule", "allergy department"],
+  },
+  {
+    section: "Provider Directory",
+    title: "Extender Rule",
+    content: "Extenders (NPs and PAs) appear in bold on the schedule. You can schedule established patients of their supervising physician with either the doctor or the extender. Cannot schedule new patients with an extender independently.",
+    tags: ["extender", "NP", "PA", "nurse practitioner", "physician assistant", "bold", "established"],
+  },
+  {
+    section: "Provider Directory",
+    title: "Telemed Providers",
+    content: "Not all providers offer Telemedicine. Always verify provider participation before booking a telehealth visit. Available visit types: Telemedicine New Patient, Telemedicine Follow-Up, Long Follow-Up Telemedicine, Telemedicine HFU.",
+    tags: ["telemed", "telemedicine", "telehealth", "virtual", "video visit"],
+  },
+  {
+    section: "Provider Directory",
+    title: "DAP Providers",
+    content: "Not all providers offer Direct Access Procedures (DAP). Verify DAP availability per provider before scheduling. DAP colonoscopies require age 45–74 eligibility plus screening questionnaire.",
+    tags: ["DAP", "direct access procedure", "colonoscopy", "DAP provider"],
+  },
+  {
+    section: "Provider Directory",
+    title: "Hepatology / Liver Providers",
+    content: "Hepatology providers treat: Liver Disease, Hepatitis B/C, Cirrhosis, Fatty Liver, NASH/MASLD, Elevated LFTs, Liver Lesions, PBC. Use Liver/Specialty event type. Patient must bring all medical records to first visit.",
+    tags: ["hepatology", "liver", "hepatitis", "cirrhosis", "NASH", "MASLD", "LFT", "liver specialist", "PBC"],
+  },
+  {
+    section: "Provider Directory",
+    title: "Volusia Region Providers",
+    content: "Providers in Port Orange, Ormond Beach, and Deltona fall under the Volusia South umbrella. Patients must stay within Volusia entities. Long Follow-Up applies if seen 1–3 years ago. Surgery Center of Volusia (SCV) is the assigned procedure facility.",
+    tags: ["Volusia", "Port Orange", "Ormond Beach", "Deltona", "SCV", "Volusia South"],
+  },
+  {
+    section: "Provider Directory",
+    title: "Bariatric & Weight Loss Providers",
+    content: "Diabetes and Weight Loss program falls under the GI scope at Borland Groover. Telemed widely available. No DAP for this specialty — procedure referrals require an office visit first.",
+    tags: ["bariatric", "weight loss", "diabetes", "obesity", "GI scope"],
+  },
+  {
+    section: "Provider Directory",
+    title: "Switching Providers",
+    content: "Established patients cannot switch doctors unless they have an approved reason, such as requesting a female physician. Interoffice transfers use the Long Follow-Up event type.",
+    tags: ["switch doctor", "switch provider", "transfer provider", "established patient", "approved reason"],
+  },
 ];
 
 router.get("/search", (req, res) => {

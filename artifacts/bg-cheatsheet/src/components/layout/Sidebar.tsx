@@ -7,7 +7,8 @@ import {
   MessageSquare, 
   MapPin, 
   Tags, 
-  FileText 
+  FileText,
+  Users
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
@@ -19,6 +20,7 @@ const links = [
   { href: "/routing", label: "Department Routing", icon: PhoneForwarded },
   { href: "/scripts", label: "Call Scripts", icon: MessageSquare },
   { href: "/locations", label: "Locations", icon: MapPin },
+  { href: "/providers", label: "Provider Directory", icon: Users },
   { href: "/disposition", label: "Disposition Codes", icon: Tags },
   { href: "/notes", label: "My Notes", icon: FileText },
 ];
