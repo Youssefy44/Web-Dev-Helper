@@ -52,23 +52,30 @@ const scripts: Script[] = [
   },
 ];
 
-function CopyButton({ text, scriptId }: { text: string; scriptId: string }) {
+const warmTransferScripts = [
+  {
+    label: "To Department — Intro",
+    script: "Thank you for holding, [department]. My name is [your name], I have [patient name], DOB [MM/DD/YYYY], calling regarding [reason for call]. I'm going to connect you now.",
+  },
+  {
+    label: "To Patient — Intro",
+    script: "[Patient name], I have [agent name] on the line from [department]. They will be able to assist you. Is there anything else I can help you with before I go?",
+  },
+];
+
+function CopyButton({ text, id }: { text: string; id: string }) {
   const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(text).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
-
   return (
     <Button
       variant="outline"
       size="sm"
-      onClick={handleCopy}
+      onClick={() => {
+        navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      }}
       className="gap-1.5 h-8 text-xs shrink-0"
-      data-testid={`copy-${scriptId}`}
+      data-testid={`copy-${id}`}
     >
       {copied ? <Check className="w-3 h-3 text-green-500" /> : <Copy className="w-3 h-3" />}
       {copied ? "Copied!" : "Copy"}
@@ -76,15 +83,12 @@ function CopyButton({ text, scriptId }: { text: string; scriptId: string }) {
   );
 }
 
-const transferScriptSteps = [
-  {
-    title: "Intro & Provide Info",
-    script: '"Thank you for holding, [department]. My name is [your name], I have [patient name], DOB [MM/DD/YYYY], calling regarding [reason for call]. I\'m going to connect you now."',
-  },
-  {
-    title: "Introducing the Patient",
-    script: '"[Patient name], I have [agent name] on the line from [department]. They will be able to assist you. Is there anything else I can help you with before I go?"',
-  },
+const verifyRows = [
+  { call: "Reschedule / Cancel", verify: "Phone number + Email" },
+  { call: "Clinical Message", verify: "Phone number + Email" },
+  { call: "Medication Renewal / Preps", verify: "Phone, Email, Insurance + Pharmacy" },
+  { call: "Appointment Confirmation", verify: "Phone number + Email" },
+  { call: "General Inquiry", verify: "Phone number + Email" },
 ];
 
 export default function Scripts() {
@@ -93,7 +97,7 @@ export default function Scripts() {
       <div>
         <h1 className="text-2xl font-bold text-foreground tracking-tight">Call Scripts</h1>
         <p className="text-sm text-muted-foreground mt-1">Click copy to use any script instantly</p>
-        <p className="text-xs text-muted-foreground font-mono mt-1">BG Main Line: 904-398-7205</p>
+        <p className="text-xs text-muted-foreground font-mono mt-0.5">BG Main Line: 904-398-7205</p>
       </div>
 
       {/* Main Scripts */}
@@ -108,7 +112,7 @@ export default function Scripts() {
                     <Icon className="w-4 h-4 text-muted-foreground" />
                     {s.title}
                   </CardTitle>
-                  <CopyButton text={s.script} scriptId={s.id} />
+                  <CopyButton text={s.script} id={s.id} />
                 </div>
               </CardHeader>
               <CardContent className="pb-4">
@@ -116,8 +120,8 @@ export default function Scripts() {
                   "{s.script}"
                 </blockquote>
                 {s.note && (
-                  <p className="text-xs text-muted-foreground mt-2 flex items-center gap-1.5">
-                    <span className="text-amber-500">Note:</span> {s.note}
+                  <p className="text-xs text-muted-foreground mt-2">
+                    <span className="text-amber-500 font-medium">Note:</span> {s.note}
                   </p>
                 )}
               </CardContent>
@@ -130,20 +134,17 @@ export default function Scripts() {
       <div>
         <h2 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">Warm Transfer Scripts</h2>
         <div className="grid md:grid-cols-2 gap-4">
-          {transferScriptSteps.map((s, i) => (
+          {warmTransferScripts.map((s, i) => (
             <Card key={i} className="border border-border">
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm font-semibold">
-                    <span className="w-5 h-5 rounded-full bg-primary/10 text-primary inline-flex items-center justify-center text-xs font-bold mr-2">{i + 1}</span>
-                    {s.title}
-                  </CardTitle>
-                  <CopyButton text={s.script} scriptId={`transfer-${i}`} />
+                  <CardTitle className="text-sm font-semibold">{s.label}</CardTitle>
+                  <CopyButton text={s.script} id={`transfer-${i}`} />
                 </div>
               </CardHeader>
               <CardContent className="pb-4">
-                <blockquote className="text-sm text-foreground bg-muted/50 rounded-lg p-4 border-l-2 border-primary/30 font-medium leading-relaxed italic">
-                  {s.script}
+                <blockquote className="text-sm text-foreground bg-muted/50 rounded-lg p-4 border-l-2 border-primary/30 italic leading-relaxed">
+                  "{s.script}"
                 </blockquote>
               </CardContent>
             </Card>
@@ -154,17 +155,28 @@ export default function Scripts() {
       {/* Demographics Verification */}
       <div>
         <h2 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">Verification Requirements by Call Type</h2>
-        <div className="grid md:grid-cols-2 gap-3">
-          {[
-            { call: "Reschedule / Cancel", verify: "Phone number + Email" },
-            { call: "Clinical Message", verify: "Phone number + Email" },
-            { call: "Medication Renewal / Preps", verify: "Phone, Email, Insurance + Pharmacy" },
-            { call: "Appointment Confirmation", verify: "Phone number + Email" },
-            { call: "General Inquiry", verify: "Phone number + Email" },
-          ].map(({ call, verify }) => (
-            <div key={call} className="flex items-center justify-between p-3 rounded-lg border border-border bg-card" data-testid={`verify-${call.toLowerCase().replace(/\s+/g, "-")}`}>
+        <div className="grid md:grid-cols-2 gap-2">
+          {verifyRows.map(({ call, verify }) => (
+            <div key={call} className="flex items-center justify-between p-3 rounded-lg border border-border bg-card">
               <span className="text-sm font-medium text-foreground">{call}</span>
               <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">{verify}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Phone number rules */}
+      <div>
+        <h2 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Phone Number Entry Rules</h2>
+        <div className="space-y-2">
+          {[
+            { rule: "Cellphone", action: "Enter in both Home AND Cell sections" },
+            { rule: "Home Phone Only", action: "Enter in Home section only" },
+            { rule: "Email", action: "Always ask for email. If none provided, check the N/A box." },
+          ].map(({ rule, action }) => (
+            <div key={rule} className="flex items-center gap-3 p-3 rounded-lg border border-border bg-card text-sm">
+              <span className="font-medium text-foreground w-36 shrink-0">{rule}</span>
+              <span className="text-muted-foreground">{action}</span>
             </div>
           ))}
         </div>

@@ -8,13 +8,15 @@ import {
   MapPin, 
   Tags, 
   FileText,
-  Users
+  Users,
+  Sparkles
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/assistant", label: "BG Assistant", icon: Sparkles },
   { href: "/search", label: "Global Search", icon: Search },
   { href: "/scheduling", label: "Scheduling Rules", icon: CalendarDays },
   { href: "/routing", label: "Department Routing", icon: PhoneForwarded },
