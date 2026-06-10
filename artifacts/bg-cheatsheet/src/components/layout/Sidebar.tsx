@@ -9,7 +9,8 @@ import {
   Tags, 
   FileText,
   Users,
-  Sparkles
+  Sparkles,
+  Monitor
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
@@ -17,6 +18,7 @@ import { ThemeToggle } from "./ThemeToggle";
 const links = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
   { href: "/assistant", label: "BG Assistant", icon: Sparkles },
+  { href: "/system-nav", label: "System Navigation", icon: Monitor },
   { href: "/search", label: "Global Search", icon: Search },
   { href: "/scheduling", label: "Scheduling Rules", icon: CalendarDays },
   { href: "/routing", label: "Department Routing", icon: PhoneForwarded },

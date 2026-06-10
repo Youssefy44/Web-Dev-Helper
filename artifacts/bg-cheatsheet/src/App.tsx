@@ -15,6 +15,7 @@ import Disposition from "@/pages/Disposition";
 import Notes from "@/pages/Notes";
 import Providers from "@/pages/Providers";
 import Assistant from "@/pages/Assistant";
+import SystemNav from "@/pages/SystemNav";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ function Router() {
         <Route path="/locations" component={Locations} />
         <Route path="/disposition" component={Disposition} />
         <Route path="/assistant" component={Assistant} />
+        <Route path="/system-nav" component={SystemNav} />
         <Route path="/providers" component={Providers} />
         <Route path="/notes" component={Notes} />
         <Route component={NotFound} />

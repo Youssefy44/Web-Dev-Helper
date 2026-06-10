@@ -1,0 +1,53 @@
+Step 1: Open Enterprise PM
+When you open the NextGen Application Launcher, you will see a list of available platforms.
+
+What to do: Locate and click on Enterprise PM (highlighted in the red circle below).
+
+Why: This opens the Practice Management side of NextGen where patient scheduling, lookup, and demographics are handled.
+
+➔ ➔ ➔ CLICK HERE:
+
+Step 2: Open the Chart Lookup Window
+Once Enterprise PM loads, you will see a blank gray screen with a blue icon toolbar across the top.
+
+What to do: Look at the top toolbar and click the Chart icon (a clipboard with a magnifying glass, circled below).
+
+Why: This triggers the "Patient Lookup" pop-up window to appear.
+
+➔ ➔ ➔ CLICK HERE:
+
+Step 3: Enter Patient Details
+The Patient Lookup search window will pop up in the center of your screen.
+
+What to do: Type the patient's information into the marked search fields:
+
+Type the patient's last name in the Last box.
+
+Type the patient's first name in the First / Preferred box.
+
+Type their date of birth in the Birth Date box (Format: MM/DD/YYYY).
+
+Action: Click the Find button at the bottom of the pop-up window.
+
+➔ ➔ ➔ FILL IN THESE FIELDS:
+
+Step 4: Select the Correct Patient
+After clicking "Find", the system will display all matching results in the Matching Records box below your search criteria.
+
+What to do: Verify that the name, Birth Date, and Address match your patient. Click on the correct patient's row to highlight it in blue (as shown with Ellis, Taylor).
+
+Action: Click the Open button at the bottom right of the window.
+
+➔ ➔ ➔ HIGHLIGHT AND OPEN:
+
+Step 5: Navigating the Patient Chart
+The patient's chart is now successfully loaded! You are automatically brought to the primary information view. To navigate different parts of their medical and account profile, use the four main lower tabs stretching across the middle of the screen:
+
+Tab A: Demographics (Default View)
+This is the view that opens first. It displays the patient's full address, primary care physician, age, telephone numbers, and preferred pharmacy details.
+
+Tab B: Encounters
+Click the Encounters tab on the far right of the sub-menu to view the patient's appointment and visit history. Here you can see the specific facility location (e.g., AdventHealth Blue Springs Surgery Center), rendering provider, and associated insurance.
+
+Tab C: Clinical History/Notes
+Click this tab to open up the clinical tree on the left side. From here, a user can toggle through specialized categories such as:
