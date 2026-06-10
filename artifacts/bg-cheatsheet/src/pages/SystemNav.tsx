@@ -7,6 +7,7 @@ import step1Img from "@assets/Gemini_Generated_Image_bilcfdbilcfdbilc_1781059806
 import step2Img from "@assets/Gemini_Generated_Image_hivdjrhivdjrhivd_1781059806125.png";
 import step3Img from "@assets/Gemini_Generated_Image_2hvn7i2hvn7i2hvn_1781059806124.png";
 import step4Img from "@assets/Gemini_Generated_Image_h7p9ath7p9ath7p9_1781059806125.png";
+import step5Img from "@assets/Screenshot_2026-06-09_165358_1781060416311.png";
 
 interface StepAction {
   type: "do" | "why" | "action" | "tip";
@@ -89,8 +90,8 @@ const steps: Step[] = [
     number: 5,
     title: "Navigate the Patient Chart",
     subtitle: "Explore the Chart Tabs",
-    image: step4Img,
-    imageAlt: "Patient chart overview showing navigation tabs",
+    image: step5Img,
+    imageAlt: "Patient chart for Ellis, Taylor showing Demographics tab and navigation tabs at the bottom",
     intro: "The patient's chart is now loaded! You are automatically brought to the primary information view. Use the tabs across the middle of the screen to navigate different parts of their record.",
     actions: [
       { type: "tip", text: "Each tab gives you a different section of the patient's account. Start with Demographics to confirm you have the right patient." },
