@@ -1,10 +1,10 @@
 import { Router } from "express";
-import OpenAI from "openai";
+import Groq from "groq-sdk";
 
 const router = Router();
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY,
 });
 
 const SYSTEM_PROMPT = `You are a knowledgeable assistant for Borland Groover (BG) appointment setter representatives at Patient Support Services. You answer questions accurately and concisely based on the BG reference knowledge below. Always be direct and practical — reps are on live calls and need fast answers.
@@ -208,7 +208,7 @@ router.post("/assistant", async (req, res) => {
     return;
   }
 
-  const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
+  const messages: Groq.Chat.ChatCompletionMessageParam[] = [
     { role: "system", content: SYSTEM_PROMPT },
     ...(history ?? []).slice(-10).map((m) => ({
       role: m.role as "user" | "assistant",
@@ -222,9 +222,9 @@ router.post("/assistant", async (req, res) => {
   res.setHeader("Connection", "keep-alive");
 
   try {
-    const stream = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      max_completion_tokens: 1024,
+    const stream = await groq.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
+      max_tokens: 1024,
       messages,
       stream: true,
     });
