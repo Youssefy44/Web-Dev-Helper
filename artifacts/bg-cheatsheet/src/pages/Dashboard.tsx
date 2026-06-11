@@ -12,6 +12,8 @@ import {
   Star,
   AlertTriangle,
   CheckCircle,
+  Activity,
+  Shield,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -67,6 +69,27 @@ const quickRules = [
 ];
 
 const navCards = [
+  {
+    href: "/call-flow",
+    label: "Call Flow Builder",
+    icon: Phone,
+    desc: "Step-by-step guides with live AHT timer & notes",
+    highlight: true,
+  },
+  {
+    href: "/digestive",
+    label: "Digestive System",
+    icon: Activity,
+    desc: "GI conditions, symptoms, treatments & BG procedures",
+    highlight: true,
+  },
+  {
+    href: "/insurance",
+    label: "Insurance Terms",
+    icon: Shield,
+    desc: "Copays, deductibles, coverage, payment terms & FAQ",
+    highlight: true,
+  },
   {
     href: "/scheduling",
     label: "Scheduling Rules",
@@ -255,20 +278,21 @@ export default function Dashboard() {
           Reference Sections
         </h2>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
-          {navCards.map(({ href, label, icon: Icon, desc }) => (
+          {navCards.map(({ href, label, icon: Icon, desc, highlight }) => (
             <Link key={href} href={href}>
               <Card
-                className="border border-border hover:border-primary/40 hover:shadow-md transition-all cursor-pointer group"
+                className={`border transition-all cursor-pointer group hover:shadow-md ${highlight ? "border-primary/40 bg-primary/5 hover:border-primary hover:bg-primary/10" : "border-border hover:border-primary/40"}`}
                 data-testid={`nav-card-${label.toLowerCase().replace(/\s/g, "-")}`}
               >
                 <CardContent className="p-4">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className={`w-8 h-8 rounded-md flex items-center justify-center group-hover:bg-primary/20 transition-colors ${highlight ? "bg-primary/20" : "bg-primary/10"}`}>
                       <Icon className="w-4 h-4 text-primary" />
                     </div>
                     <span className="font-semibold text-sm text-foreground">
                       {label}
                     </span>
+                    {highlight && <Badge className="ml-auto text-xs bg-primary/10 text-primary border-primary/20 hidden sm:inline-flex">New</Badge>}
                   </div>
                   <p className="text-xs text-muted-foreground">{desc}</p>
                 </CardContent>
