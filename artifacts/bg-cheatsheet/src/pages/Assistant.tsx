@@ -1,13 +1,9 @@
-import { useState, useRef, useEffect } from "react";
-import { Send, Bot, User, Loader2, Sparkles, RotateCcw, Copy, Check } from "lucide-react";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { Send, Bot, User, Loader2, Sparkles, RotateCcw, Copy, Check, Database, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-
-interface Message {
-  role: "user" | "assistant";
-  content: string;
-}
+import { getAnswer, type Message } from "@/lib/localAgent";
 
 const SUGGESTED = [
   "When do I use Long Follow-Up vs Follow-Up?",
@@ -18,6 +14,10 @@ const SUGGESTED = [
   "What do I do if a patient has a balance over $1000?",
   "What are the EGD recall requirements?",
   "How do I handle a new patient with no HFU provider listed?",
+  "What's the opening script?",
+  "What disposition code do I use when I schedule an appointment?",
+  "Where is Dr. Gopal located?",
+  "What insurance topics can I NOT discuss?",
 ];
 
 function CopyButton({ text }: { text: string }) {
@@ -37,6 +37,36 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
+function FormattedMessage({ text }: { text: string }) {
+  const lines = text.split("\n");
+  return (
+    <div className="space-y-1 text-sm leading-relaxed">
+      {lines.map((line, i) => {
+        if (!line.trim()) return <div key={i} className="h-1" />;
+        const parts = line.split(/(\*\*[^*]+\*\*)/g);
+        const formatted = parts.map((part, j) => {
+          if (part.startsWith("**") && part.endsWith("**")) {
+            return <strong key={j}>{part.slice(2, -2)}</strong>;
+          }
+          return part;
+        });
+        if (line.startsWith("•") || line.startsWith("✅") || line.startsWith("⛔") || line.startsWith("⚠️") || line.startsWith("→")) {
+          return (
+            <div key={i} className="flex items-start gap-1.5">
+              <span className="shrink-0 mt-0.5">{formatted[0]}</span>
+              <span>{formatted.slice(1)}</span>
+            </div>
+          );
+        }
+        if (line.startsWith("---")) {
+          return <hr key={i} className="border-border my-1" />;
+        }
+        return <p key={i}>{formatted}</p>;
+      })}
+    </div>
+  );
+}
+
 function MessageBubble({ msg }: { msg: Message }) {
   const isUser = msg.role === "user";
   return (
@@ -48,13 +78,30 @@ function MessageBubble({ msg }: { msg: Message }) {
         {isUser ? <User className="w-3.5 h-3.5" /> : <Bot className="w-3.5 h-3.5" />}
       </div>
       <div className={cn(
-        "max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed relative",
+        "max-w-[82%] rounded-2xl px-4 py-3 relative",
         isUser
-          ? "bg-primary text-primary-foreground rounded-tr-sm"
+          ? "bg-primary text-primary-foreground rounded-tr-sm text-sm"
           : "bg-card border border-border rounded-tl-sm"
       )}>
-        <p className="whitespace-pre-wrap">{msg.content}</p>
+        {isUser
+          ? <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
+          : <FormattedMessage text={msg.content} />
+        }
         {!isUser && <CopyButton text={msg.content} />}
+      </div>
+    </div>
+  );
+}
+
+function StreamingBubble({ text }: { text: string }) {
+  return (
+    <div className="flex gap-3">
+      <div className="w-7 h-7 rounded-full bg-teal-100 dark:bg-teal-900/60 text-teal-700 dark:text-teal-300 flex items-center justify-center shrink-0 mt-0.5">
+        <Bot className="w-3.5 h-3.5" />
+      </div>
+      <div className="max-w-[82%] bg-card border border-border rounded-2xl rounded-tl-sm px-4 py-3">
+        <FormattedMessage text={text} />
+        <span className="inline-block w-0.5 h-4 bg-primary ml-0.5 animate-pulse align-middle" />
       </div>
     </div>
   );
@@ -82,13 +129,13 @@ export default function Assistant() {
   const [streamingText, setStreamingText] = useState("");
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const abortRef = useRef<AbortController | null>(null);
+  const streamRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, streamingText, streaming]);
 
-  const sendMessage = async (text: string) => {
+  const sendMessage = useCallback(async (text: string) => {
     const trimmed = text.trim();
     if (!trimmed || streaming) return;
 
@@ -99,60 +146,28 @@ export default function Assistant() {
     setStreaming(true);
     setStreamingText("");
 
-    const abort = new AbortController();
-    abortRef.current = abort;
+    await new Promise((r) => setTimeout(r, 120));
 
-    try {
-      const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-      const res = await fetch(`${base}/api/assistant`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: trimmed,
-          history: messages.slice(-10),
-        }),
-        signal: abort.signal,
-      });
+    const answer = getAnswer(trimmed, messages.slice(-10));
 
-      if (!res.ok) throw new Error(`Server error ${res.status}`);
+    let revealed = "";
+    const CHUNK = 6;
+    const DELAY = 12;
 
-      const reader = res.body!.getReader();
-      const decoder = new TextDecoder();
-      let full = "";
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        const chunk = decoder.decode(value, { stream: true });
-        for (const line of chunk.split("\n")) {
-          if (!line.startsWith("data: ")) continue;
-          try {
-            const payload = JSON.parse(line.slice(6));
-            if (payload.content) {
-              full += payload.content;
-              setStreamingText(full);
-            }
-            if (payload.done || payload.error) {
-              const finalText = payload.error ? `Sorry, I encountered an error: ${payload.error}` : full;
-              setMessages((prev) => [...prev, { role: "assistant", content: finalText }]);
-              setStreamingText("");
-              setStreaming(false);
-              return;
-            }
-          } catch {
-            // skip malformed SSE line
-          }
-        }
+    function streamNext(idx: number) {
+      if (idx >= answer.length) {
+        setMessages((prev) => [...prev, { role: "assistant", content: answer }]);
+        setStreamingText("");
+        setStreaming(false);
+        return;
       }
-    } catch (err: unknown) {
-      if ((err as Error).name !== "AbortError") {
-        setMessages((prev) => [...prev, { role: "assistant", content: "Sorry, I couldn't connect to the assistant. Please try again." }]);
-      }
-      setStreamingText("");
-      setStreaming(false);
+      revealed = answer.slice(0, idx + CHUNK);
+      setStreamingText(revealed);
+      streamRef.current = setTimeout(() => streamNext(idx + CHUNK), DELAY);
     }
-  };
+
+    streamNext(0);
+  }, [messages, streaming]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -162,7 +177,7 @@ export default function Assistant() {
   };
 
   const handleReset = () => {
-    abortRef.current?.abort();
+    if (streamRef.current) clearTimeout(streamRef.current);
     setMessages([]);
     setStreamingText("");
     setStreaming(false);
@@ -174,14 +189,16 @@ export default function Assistant() {
 
   return (
     <div className="flex flex-col h-[calc(100vh-8rem)]" data-testid="assistant-page">
-      {/* Header */}
       <div className="flex items-center justify-between mb-4 shrink-0">
         <div>
           <h1 className="text-2xl font-bold text-foreground tracking-tight flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-teal-500" />
             BG Assistant
           </h1>
-          <p className="text-sm text-muted-foreground mt-0.5">Ask anything about scheduling rules, routing, scripts, or policies</p>
+          <p className="text-sm text-muted-foreground mt-0.5 flex items-center gap-1.5">
+            <Database className="w-3.5 h-3.5" />
+            Local knowledge base — no API key required
+          </p>
         </div>
         {messages.length > 0 && (
           <Button variant="outline" size="sm" onClick={handleReset} className="gap-1.5 text-xs" data-testid="reset-chat">
@@ -191,7 +208,6 @@ export default function Assistant() {
         )}
       </div>
 
-      {/* Chat Area */}
       <div className="flex-1 overflow-y-auto min-h-0 space-y-4 pr-1">
         {isEmpty && (
           <div className="flex flex-col items-center justify-center h-full text-center pb-8">
@@ -199,15 +215,27 @@ export default function Assistant() {
               <Bot className="w-7 h-7 text-teal-600 dark:text-teal-400" />
             </div>
             <h2 className="text-base font-semibold text-foreground">How can I help you?</h2>
-            <p className="text-sm text-muted-foreground mt-1 mb-6">Ask about any BG policy, scheduling rule, or procedure</p>
+            <p className="text-sm text-muted-foreground mt-1 mb-5">
+              Ask about any BG policy, scheduling rule, provider, or procedure
+            </p>
+            <div className="p-3 bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800 rounded-xl mb-5 max-w-sm w-full">
+              <div className="flex items-center gap-2 text-xs text-teal-700 dark:text-teal-300">
+                <Database className="w-3.5 h-3.5 shrink-0" />
+                <span className="font-medium">Runs entirely on local data</span>
+              </div>
+              <p className="text-xs text-teal-600 dark:text-teal-400 mt-1">
+                Searches scheduling rules, routing, scripts, providers, conditions, insurance terms, and disposition codes — no internet needed.
+              </p>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-xl">
               {SUGGESTED.map((q) => (
                 <button
                   key={q}
                   onClick={() => sendMessage(q)}
-                  className="text-left text-xs px-3 py-2.5 rounded-xl border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all text-muted-foreground hover:text-foreground"
+                  className="text-left text-xs px-3 py-2.5 rounded-xl border border-border bg-card hover:border-primary/40 hover:bg-primary/5 transition-all text-muted-foreground hover:text-foreground flex items-center gap-2"
                   data-testid="suggested-question"
                 >
+                  <ChevronRight className="w-3 h-3 shrink-0 text-primary/60" />
                   {q}
                 </button>
               ))}
@@ -219,23 +247,12 @@ export default function Assistant() {
           <MessageBubble key={i} msg={msg} />
         ))}
 
-        {streaming && streamingText && (
-          <div className="flex gap-3 group">
-            <div className="w-7 h-7 rounded-full bg-teal-100 dark:bg-teal-900/60 text-teal-700 dark:text-teal-300 flex items-center justify-center shrink-0 mt-0.5">
-              <Bot className="w-3.5 h-3.5" />
-            </div>
-            <div className="max-w-[80%] bg-card border border-border rounded-2xl rounded-tl-sm px-4 py-3 text-sm leading-relaxed">
-              <p className="whitespace-pre-wrap">{streamingText}<span className="inline-block w-0.5 h-4 bg-primary ml-0.5 animate-pulse align-middle" /></p>
-            </div>
-          </div>
-        )}
-
+        {streaming && streamingText && <StreamingBubble text={streamingText} />}
         {streaming && !streamingText && <TypingBubble />}
 
         <div ref={bottomRef} />
       </div>
 
-      {/* Input */}
       <div className="mt-4 shrink-0">
         <div className="flex gap-2 items-end p-3 rounded-2xl border border-border bg-card focus-within:border-primary/50 focus-within:ring-1 focus-within:ring-primary/20 transition-all shadow-sm">
           <Textarea
@@ -260,7 +277,7 @@ export default function Assistant() {
           </Button>
         </div>
         <p className="text-xs text-muted-foreground text-center mt-2">
-          Answers are based on BG reference materials. Always verify with SharePoint cheat sheet for the latest policies.
+          Answers sourced from BG reference materials. Verify with SharePoint cheat sheet for latest policies.
         </p>
       </div>
     </div>

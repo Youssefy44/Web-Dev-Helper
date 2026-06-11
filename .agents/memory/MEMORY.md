@@ -1,0 +1,1 @@
+- [BG App Architecture](bg-app-architecture.md) — key data files, local agent design, ⌘K palette structure

@@ -14,6 +14,7 @@ import {
   Activity,
   Shield,
   Phone,
+  Command,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
@@ -22,17 +23,17 @@ const links = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard, group: "main" },
   { href: "/assistant", label: "BG Assistant", icon: Sparkles, group: "main" },
   { href: "/call-flow", label: "Call Flow Builder", icon: Phone, group: "main" },
-  { href: "/system-nav", label: "System Navigation", icon: Monitor, group: "reference" },
-  { href: "/search", label: "Global Search", icon: Search, group: "reference" },
+  { href: "/notes", label: "My Notes", icon: FileText, group: "main" },
   { href: "/digestive", label: "Digestive System", icon: Activity, group: "knowledge" },
   { href: "/insurance", label: "Insurance Terms", icon: Shield, group: "knowledge" },
+  { href: "/system-nav", label: "System Navigation", icon: Monitor, group: "reference" },
+  { href: "/search", label: "Global Search", icon: Search, group: "reference" },
   { href: "/scheduling", label: "Scheduling Rules", icon: CalendarDays, group: "reference" },
   { href: "/routing", label: "Department Routing", icon: PhoneForwarded, group: "reference" },
   { href: "/scripts", label: "Call Scripts", icon: MessageSquare, group: "reference" },
   { href: "/locations", label: "Locations", icon: MapPin, group: "reference" },
   { href: "/providers", label: "Provider Directory", icon: Users, group: "reference" },
   { href: "/disposition", label: "Disposition Codes", icon: Tags, group: "reference" },
-  { href: "/notes", label: "My Notes", icon: FileText, group: "main" },
 ];
 
 const groups = [
@@ -41,7 +42,11 @@ const groups = [
   { id: "reference", label: "Reference" },
 ];
 
-export function Sidebar() {
+interface SidebarProps {
+  onOpenSearch?: () => void;
+}
+
+export function Sidebar({ onOpenSearch }: SidebarProps) {
   const [location] = useLocation();
 
   return (
@@ -54,6 +59,21 @@ export function Sidebar() {
         <p className="text-xs text-muted-foreground mt-1 font-medium tracking-wide">
           COMMAND CENTER
         </p>
+      </div>
+
+      {/* Quick Search Button */}
+      <div className="px-3 pb-2">
+        <button
+          onClick={onOpenSearch}
+          className="w-full flex items-center gap-2 px-3 py-2 rounded-md border border-border bg-muted/50 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-all group"
+          data-testid="open-search-btn"
+        >
+          <Search className="w-3.5 h-3.5" />
+          <span className="flex-1 text-left text-xs">Quick search…</span>
+          <span className="flex items-center gap-0.5 text-[10px] border border-border rounded px-1 py-0.5 font-mono opacity-60 group-hover:opacity-100">
+            <Command className="w-2.5 h-2.5" />K
+          </span>
+        </button>
       </div>
 
       <nav className="flex-1 px-3 overflow-y-auto pb-4 space-y-4">

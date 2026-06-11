@@ -6,7 +6,6 @@ import {
   Stethoscope,
   User,
   MapPin,
-  Clock,
   AlertTriangle,
   ChevronDown,
   ChevronRight,
@@ -15,371 +14,51 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { providers, specialties, type Provider, type Specialty } from "@/data/providers";
 
-type ProviderType = "MD" | "DO" | "NP" | "PA";
-type Specialty =
-  | "Gastroenterology"
-  | "Allergist"
-  | "Hepatology"
-  | "GI & Hepatology"
-  | "Bariatric & Weight Loss"
-  | "Diabetes & Endocrinology";
-
-interface Provider {
-  name: string;
-  title: ProviderType;
-  specialty: Specialty;
-  locations: string[];
-  extenderOf?: string;
-  schedulingNotes: string[];
-  acceptsNew: boolean;
-  telemedAvailable: boolean;
-  dapAvailable: boolean;
-  preferredApptLength?: string;
-  warnings?: string[];
-}
-
-const providers: Provider[] = [
-  // ── Gastroenterology & Hepatology Physicians ──
-  {
-    name: "Dr. Vikram Gopal",
-    title: "MD",
-    specialty: "Gastroenterology",
-    locations: ["Southside"],
-    acceptsNew: true,
-    telemedAvailable: true,
-    dapAvailable: true,
-    schedulingNotes: [
-      "Board-certified in Gastroenterology. Primary location is Southside.",
-      "Catherine Bailey, PA-C serves as his dedicated clinic extender.",
-    ],
-    warnings: [],
-  },
-  {
-    name: "Dr. Emily Rostholder",
-    title: "MD",
-    specialty: "Gastroenterology",
-    locations: ["Riverside", "Orange Park"],
-    acceptsNew: true,
-    telemedAvailable: true,
-    dapAvailable: true,
-    schedulingNotes: [
-      "Practices out of both Riverside and Orange Park regional clinics.",
-      "Corrie Baker, PA-C serves as her dedicated clinic extender.",
-    ],
-    warnings: [],
-  },
-  {
-    name: "Dr. Daniel J. Gassert",
-    title: "MD",
-    specialty: "Gastroenterology",
-    locations: ["St. Augustine"],
-    acceptsNew: true,
-    telemedAvailable: true,
-    dapAvailable: true,
-    schedulingNotes: [
-      "St. Augustine regional hub physician.",
-      "Alice Carter, APRN serves as his dedicated clinic extender.",
-    ],
-    warnings: [],
-  },
-  {
-    name: "Dr. Nicholas Agresti",
-    title: "MD",
-    specialty: "Gastroenterology",
-    locations: ["Orange Park", "Riverside"],
-    acceptsNew: true,
-    telemedAvailable: true,
-    dapAvailable: true,
-    schedulingNotes: [
-      "Shared practice coverage network in Clay and Duval counties.",
-      "Supported by regional extender Sheri Hayes-Raulerson, APRN.",
-    ],
-    warnings: [],
-  },
-  {
-    name: "Dr. Andrew Brown",
-    title: "MD",
-    specialty: "Gastroenterology",
-    locations: ["Orange Park", "Riverside"],
-    acceptsNew: true,
-    telemedAvailable: true,
-    dapAvailable: true,
-    schedulingNotes: [
-      "Shared practice coverage network across Orange Park and Riverside.",
-      "Supported by regional extender Sheri Hayes-Raulerson, APRN.",
-    ],
-    warnings: [],
-  },
-  {
-    name: "Dr. Ali Lankarani",
-    title: "MD",
-    specialty: "Gastroenterology",
-    locations: ["Orange Park", "Riverside"],
-    acceptsNew: true,
-    telemedAvailable: true,
-    dapAvailable: true,
-    schedulingNotes: [
-      "Advanced therapeutic endoscopy and general GI coverage.",
-      "Supported by regional extender Sheri Hayes-Raulerson, APRN.",
-    ],
-    warnings: [],
-  },
-  {
-    name: "Dr. Louis Agnone",
-    title: "MD",
-    specialty: "Gastroenterology",
-    locations: ["Port Orange", "Ormond Beach"],
-    acceptsNew: true,
-    telemedAvailable: true,
-    dapAvailable: true,
-    schedulingNotes: [
-      "Volusia County regional network provider.",
-      "Shares dedicated extender team: Dottie Porter, Travis Satterfield, and Marika Walker.",
-    ],
-    warnings: [
-      "Volusia county network — track local surgical center routing strictly.",
-    ],
-  },
-  {
-    name: "Dr. Ketul Patel",
-    title: "MD",
-    specialty: "Gastroenterology",
-    locations: ["Port Orange", "Ormond Beach"],
-    acceptsNew: true,
-    telemedAvailable: true,
-    dapAvailable: true,
-    schedulingNotes: [
-      "Volusia County regional network provider.",
-      "Shares dedicated extender team: Dottie Porter, Travis Satterfield, and Marika Walker.",
-    ],
-    warnings: [
-      "Volusia county network — track local surgical center routing strictly.",
-    ],
-  },
-  {
-    name: "Dr. Vrushak Deshpande",
-    title: "MD",
-    specialty: "Gastroenterology",
-    locations: ["Port Orange", "Ormond Beach"],
-    acceptsNew: true,
-    telemedAvailable: true,
-    dapAvailable: true,
-    schedulingNotes: [
-      "Volusia County regional network provider.",
-      "Shares dedicated extender team: Dottie Porter, Travis Satterfield, and Marika Walker.",
-    ],
-    warnings: [
-      "Volusia county network — track local surgical center routing strictly.",
-    ],
-  },
-  {
-    name: "Dr. Kyle Etzkorn",
-    title: "MD",
-    specialty: "Gastroenterology",
-    locations: ["Southside"],
-    acceptsNew: true,
-    telemedAvailable: false,
-    dapAvailable: true,
-    schedulingNotes: [
-      "Chief Medical Officer / Clinical Research Director.",
-      "Check specific trial parameters if routing for clinical research slots.",
-    ],
-    warnings: [],
-  },
-  {
-    name: "Dr. Ronald Racho",
-    title: "DO",
-    specialty: "Gastroenterology",
-    locations: ["Durbin Crossing"],
-    acceptsNew: true,
-    telemedAvailable: true,
-    dapAvailable: true,
-    schedulingNotes: [
-      "Serves St. Johns county community via Durbin Crossing office context.",
-    ],
-    warnings: [],
-  },
-  {
-    name: "Dr. William J. Barlow",
-    title: "MD",
-    specialty: "Gastroenterology",
-    locations: ["St. Augustine"],
-    acceptsNew: true,
-    telemedAvailable: true,
-    dapAvailable: true,
-    schedulingNotes: [
-      "Provides core GI clinical and operative services in St. Augustine.",
-    ],
-    warnings: [],
-  },
-  {
-    name: "Dr. Mary Barbara",
-    title: "MD",
-    specialty: "Gastroenterology",
-    locations: ["Nassau Crossing"],
-    acceptsNew: true,
-    telemedAvailable: true,
-    dapAvailable: true,
-    schedulingNotes: [
-      "Primary local hub routing covers northern Duval and Nassau counties.",
-    ],
-    warnings: [],
-  },
-
-  // ── Advanced Practice Providers / Extenders ──
-  {
-    name: "Catherine Bailey, PA-C",
-    title: "PA",
-    specialty: "Gastroenterology",
-    locations: ["Southside"],
-    extenderOf: "Dr. Vikram Gopal",
-    acceptsNew: false,
-    telemedAvailable: true,
-    dapAvailable: false,
-    schedulingNotes: [
-      "Clinic Extender for Dr. Vikram Gopal.",
-      "Can book established patients of Dr. Gopal.",
-    ],
-    warnings: [
-      "Only affiliated with the following physician(s): Dr. Vikram Gopal.",
-    ],
-  },
-  {
-    name: "Corrie Baker, PA-C",
-    title: "PA",
-    specialty: "Gastroenterology",
-    locations: ["Riverside", "Orange Park"],
-    extenderOf: "Dr. Emily Rostholder",
-    acceptsNew: false,
-    telemedAvailable: true,
-    dapAvailable: false,
-    schedulingNotes: [
-      "Clinic Extender for Dr. Emily Rostholder.",
-      "Maintains clinic schedules across both Riverside and Orange Park locations.",
-    ],
-    warnings: [
-      "Only affiliated with the following physician(s): Dr. Emily Rostholder.",
-    ],
-  },
-  {
-    name: "Alice Carter, APRN",
-    title: "NP",
-    specialty: "Gastroenterology",
-    locations: ["St. Augustine"],
-    extenderOf: "Dr. Daniel J. Gassert",
-    acceptsNew: false,
-    telemedAvailable: true,
-    dapAvailable: false,
-    schedulingNotes: [
-      "Clinic Extender for Dr. Daniel J. Gassert.",
-      "Handles localized medical management and follow-ups in St. Augustine.",
-    ],
-    warnings: [
-      "Only affiliated with the following physician(s): Dr. Daniel J. Gassert.",
-    ],
-  },
-  {
-    name: "Sheri Hayes-Raulerson, APRN",
-    title: "NP",
-    specialty: "Gastroenterology",
-    locations: ["Orange Park", "Riverside"],
-    extenderOf: "Dr. Agresti / Dr. Brown / Dr. Lankarani",
-    acceptsNew: false,
-    telemedAvailable: true,
-    dapAvailable: false,
-    schedulingNotes: [
-      "Serves as the shared regional clinic extender for three primary physicians.",
-      "Coordinates cross-coverage cases between Orange Park and Riverside.",
-    ],
-    warnings: [
-      "Only affiliated with the following physician(s): Dr. Nicholas Agresti, Dr. Andrew Brown, Dr. Ali Lankarani.",
-    ],
-  },
-  {
-    name: "Dottie Porter, PA-C",
-    title: "PA",
-    specialty: "Gastroenterology",
-    locations: ["Port Orange", "Ormond Beach"],
-    extenderOf: "Dr. Agnone / Dr. K. Patel / Dr. Deshpande",
-    acceptsNew: false,
-    telemedAvailable: true,
-    dapAvailable: false,
-    schedulingNotes: [
-      "Volusia County specialized team-based extender.",
-      "Manages ongoing care plans for the regional pod.",
-    ],
-    warnings: [
-      "Only affiliated with the following physician(s): Dr. Louis Agnone, Dr. Ketul Patel, Dr. Vrushak Deshpande.",
-    ],
-  },
-  {
-    name: "Travis Satterfield, PA-C",
-    title: "PA",
-    specialty: "Gastroenterology",
-    locations: ["Port Orange", "Ormond Beach"],
-    extenderOf: "Dr. Agnone / Dr. K. Patel / Dr. Deshpande",
-    acceptsNew: false,
-    telemedAvailable: true,
-    dapAvailable: false,
-    schedulingNotes: [
-      "Volusia County specialized team-based extender.",
-      "Ensures clinic throughput and continuity of care for the regional pod.",
-    ],
-    warnings: [
-      "Only affiliated with the following physician(s): Dr. Louis Agnone, Dr. Ketul Patel, Dr. Vrushak Deshpande.",
-    ],
-  },
-  {
-    name: "Marika Walker, PA-C",
-    title: "PA",
-    specialty: "Gastroenterology",
-    locations: ["Port Orange", "Ormond Beach"],
-    extenderOf: "Dr. Agnone / Dr. K. Patel / Dr. Deshpande",
-    acceptsNew: false,
-    telemedAvailable: true,
-    dapAvailable: false,
-    schedulingNotes: [
-      "Volusia County specialized team-based extender.",
-      "Manages follow-up evaluations and treatments for the regional pod.",
-    ],
-    warnings: [
-      "Only affiliated with the following physician(s): Dr. Louis Agnone, Dr. Ketul Patel, Dr. Vrushak Deshpande.",
-    ],
-  },
-];
-
-const specialties: Specialty[] = [
-  "Gastroenterology",
-  "Hepatology",
-  "GI & Hepatology",
-  "Bariatric & Weight Loss",
-  "Diabetes & Endocrinology",
-];
-
-const titleColors: Record<ProviderType, string> = {
+const titleColors: Record<string, string> = {
   MD: "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  "MD, AGAF": "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  "MD, FACP, CPI": "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  "MD, FASGE": "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  "MD, FACG, CPE": "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  "MD, MPH": "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  "MD, MS": "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  "MD, JD": "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  "MD, FRCP": "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  "MD, MHS": "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  "MD, MS, FASGE": "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  "MD, MPH, FACP": "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
+  "MD, FACP, PGDCA, MBA": "bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200",
   DO: "bg-teal-100 text-teal-800 dark:bg-teal-900/60 dark:text-teal-200",
+  "DO, MS": "bg-teal-100 text-teal-800 dark:bg-teal-900/60 dark:text-teal-200",
+  "DO, MPH": "bg-teal-100 text-teal-800 dark:bg-teal-900/60 dark:text-teal-200",
   NP: "bg-purple-100 text-purple-800 dark:bg-purple-900/60 dark:text-purple-200",
   PA: "bg-violet-100 text-violet-800 dark:bg-violet-900/60 dark:text-violet-200",
 };
 
 const specialtyColors: Record<string, string> = {
   Gastroenterology: "bg-primary/10 text-primary",
-  Hepatology:
-    "bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200",
-  "GI & Hepatology":
-    "bg-orange-100 text-orange-800 dark:bg-orange-900/60 dark:text-orange-200",
-  "Bariatric & Weight Loss":
-    "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200",
-  "Diabetes & Endocrinology":
-    "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/60 dark:text-cyan-200",
+  Hepatology: "bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200",
+  "GI & Hepatology": "bg-orange-100 text-orange-800 dark:bg-orange-900/60 dark:text-orange-200",
+  "Bariatric & Weight Loss": "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200",
+  "Diabetes & Endocrinology": "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/60 dark:text-cyan-200",
+  "Allergy & Asthma": "bg-rose-100 text-rose-800 dark:bg-rose-900/60 dark:text-rose-200",
 };
+
+function getShortTitle(title: string): string {
+  if (title.startsWith("MD")) return "MD";
+  if (title.startsWith("DO")) return "DO";
+  if (title === "NP") return "NP";
+  if (title === "PA") return "PA";
+  return title;
+}
 
 function ProviderCard({ provider }: { provider: Provider }) {
   const [expanded, setExpanded] = useState(false);
   const isExtender = !!provider.extenderOf;
   const hasWarnings = provider.warnings && provider.warnings.length > 0;
+  const shortTitle = getShortTitle(provider.title);
 
   return (
     <Card
@@ -394,21 +73,21 @@ function ProviderCard({ provider }: { provider: Provider }) {
       data-testid={`provider-${provider.name.toLowerCase().replace(/[\s.,]/g, "-")}`}
     >
       <CardContent className="p-4">
-        {/* Header row */}
         <div className="flex items-start justify-between gap-2 mb-3">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
-              <h3 className="font-bold text-sm text-foreground">
-                {provider.name}
-              </h3>
+              <h3 className="font-bold text-sm text-foreground">{provider.name}</h3>
               <span
                 className={cn(
                   "text-xs font-semibold px-1.5 py-0.5 rounded",
-                  titleColors[provider.title],
+                  titleColors[provider.title] ?? titleColors[shortTitle] ?? "bg-muted text-muted-foreground",
                 )}
               >
-                {provider.title}
+                {shortTitle}
               </span>
+              {provider.title !== shortTitle && (
+                <span className="text-xs text-muted-foreground hidden sm:inline">{provider.title.replace(/^(MD|DO), /, "")}</span>
+              )}
               {isExtender && (
                 <span className="text-xs text-muted-foreground italic">
                   Extender — {provider.extenderOf}
@@ -418,8 +97,7 @@ function ProviderCard({ provider }: { provider: Provider }) {
             <span
               className={cn(
                 "text-xs px-2 py-0.5 rounded-full font-medium mt-1 inline-block",
-                specialtyColors[provider.specialty] ??
-                  "bg-muted text-muted-foreground",
+                specialtyColors[provider.specialty] ?? "bg-muted text-muted-foreground",
               )}
             >
               {provider.specialty}
@@ -428,17 +106,11 @@ function ProviderCard({ provider }: { provider: Provider }) {
           <button
             onClick={() => setExpanded(!expanded)}
             className="text-muted-foreground hover:text-foreground transition-colors shrink-0 mt-0.5"
-            data-testid={`provider-expand-${provider.name.toLowerCase().replace(/[\s.,]/g, "-")}`}
           >
-            {expanded ? (
-              <ChevronDown className="w-4 h-4" />
-            ) : (
-              <ChevronRight className="w-4 h-4" />
-            )}
+            {expanded ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
           </button>
         </div>
 
-        {/* Warnings */}
         {hasWarnings && (
           <div className="space-y-1 mb-3">
             {provider.warnings!.map((w, i) => (
@@ -453,7 +125,6 @@ function ProviderCard({ provider }: { provider: Provider }) {
           </div>
         )}
 
-        {/* Location + quick flags */}
         <div className="flex flex-wrap items-center gap-2 text-xs">
           <div className="flex items-center gap-1 text-muted-foreground">
             <MapPin className="w-3 h-3" />
@@ -483,17 +154,13 @@ function ProviderCard({ provider }: { provider: Provider }) {
           </div>
         </div>
 
-        {/* Expanded scheduling notes */}
         {expanded && (
           <div className="mt-3 pt-3 border-t border-border space-y-1.5">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
               Scheduling Notes
             </p>
             {provider.schedulingNotes.map((note, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-2 text-xs text-muted-foreground"
-              >
+              <div key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
                 <span className="text-primary mt-0.5">•</span>
                 <span>{note}</span>
               </div>
@@ -528,64 +195,39 @@ export default function Providers() {
     return matchSearch && matchSpecialty && matchExtender;
   });
 
-  const physicians = filtered.filter(
-    (p) => p.title === "MD" || p.title === "DO",
-  );
-  const extenders = filtered.filter(
-    (p) => p.title === "NP" || p.title === "PA",
-  );
+  const physicians = filtered.filter((p) => !p.extenderOf);
+  const extenders = filtered.filter((p) => !!p.extenderOf);
 
   return (
     <div className="space-y-6" data-testid="providers-page">
       <div>
-        <h1 className="text-2xl font-bold text-foreground tracking-tight">
+        <h1 className="text-2xl font-bold text-foreground tracking-tight flex items-center gap-2">
+          <Stethoscope className="w-5 h-5 text-primary" />
           Provider Directory
         </h1>
         <p className="text-sm text-muted-foreground mt-1">
-          BG physicians by specialty — locations, DAP availability, and
-          scheduling preferences
+          {providers.filter(p => !p.extenderOf).length} physicians · {providers.filter(p => !!p.extenderOf).length} extenders — locations, DAP availability, and scheduling notes
         </p>
       </div>
 
-      {/* Legend */}
       <div className="flex flex-wrap gap-2 text-xs">
         {[
-          {
-            label: "Telemed ✓",
-            cls: "bg-teal-100 text-teal-700 dark:bg-teal-900/60 dark:text-teal-200",
-          },
-          {
-            label: "DAP ✓",
-            cls: "bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-200",
-          },
-          {
-            label: "New Pts ✓",
-            cls: "bg-green-100 text-green-700 dark:bg-green-900/60 dark:text-green-200",
-          },
-          {
-            label: "Estab Only",
-            cls: "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400",
-          },
+          { label: "Telemed ✓", cls: "bg-teal-100 text-teal-700 dark:bg-teal-900/60 dark:text-teal-200" },
+          { label: "DAP ✓", cls: "bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-200" },
+          { label: "New Pts ✓", cls: "bg-green-100 text-green-700 dark:bg-green-900/60 dark:text-green-200" },
+          { label: "Estab Only", cls: "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400" },
         ].map(({ label, cls }) => (
-          <span
-            key={label}
-            className={cn("px-2 py-0.5 rounded font-medium", cls)}
-          >
-            {label}
-          </span>
+          <span key={label} className={cn("px-2 py-0.5 rounded font-medium", cls)}>{label}</span>
         ))}
-        <span className="text-muted-foreground ml-1 self-center">
-          — Click any card to expand scheduling notes
-        </span>
+        <span className="text-muted-foreground ml-1 self-center">— Click any card to expand scheduling notes</span>
       </div>
 
-      {/* Search + filters */}
       <div className="flex flex-col sm:flex-row gap-3">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
           <Input
             type="search"
-            placeholder="Search by name, location, specialty..."
+            placeholder="Search by name, location, specialty…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="pl-10 h-10"
@@ -614,7 +256,6 @@ export default function Providers() {
         </button>
       </div>
 
-      {/* Specialty filters */}
       <div className="flex flex-wrap gap-2">
         {["All", ...specialties].map((s) => (
           <button
@@ -626,22 +267,18 @@ export default function Providers() {
                 ? "bg-primary text-primary-foreground border-primary"
                 : "bg-muted text-muted-foreground border-border hover:border-primary/40 hover:text-foreground",
             )}
-            data-testid={`specialty-filter-${s.toLowerCase().replace(/\s+/g, "-")}`}
           >
             {s}
           </button>
         ))}
       </div>
 
-      {/* Results count */}
       {search && (
         <p className="text-xs text-muted-foreground">
-          {filtered.length} provider{filtered.length !== 1 ? "s" : ""} matching
-          "{search}"
+          {filtered.length} provider{filtered.length !== 1 ? "s" : ""} matching "{search}"
         </p>
       )}
 
-      {/* Physicians */}
       {physicians.length > 0 && (
         <div>
           <h2 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3 flex items-center gap-2">
@@ -656,7 +293,6 @@ export default function Providers() {
         </div>
       )}
 
-      {/* Extenders */}
       {showExtenders && extenders.length > 0 && (
         <div>
           <h2 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3 flex items-center gap-2">
@@ -665,10 +301,7 @@ export default function Providers() {
           </h2>
           <div className="p-3 bg-amber-50 border border-amber-200 dark:bg-amber-950/40 dark:border-amber-800 rounded-lg mb-3">
             <p className="text-xs text-amber-800 dark:text-amber-300">
-              <span className="font-semibold">Extender Rule:</span> Extenders
-              appear in bold on the schedule. You can book established patients
-              of their supervising physician with either the doctor or the
-              extender.
+              <span className="font-semibold">Extender Rule:</span> Extenders appear in bold on the schedule. You can book established patients of their supervising physician with either the doctor or the extender.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-3">
@@ -680,12 +313,9 @@ export default function Providers() {
       )}
 
       {filtered.length === 0 && (
-        <div className="text-center py-16 text-muted-foreground">
-          <Users className="w-10 h-10 mx-auto mb-3 opacity-20" />
-          <p className="text-sm font-medium">No providers match your search</p>
-          <p className="text-xs mt-1">
-            Try a different name, location, or specialty
-          </p>
+        <div className="text-center py-12 text-muted-foreground">
+          <Users className="w-8 h-8 mx-auto mb-3 opacity-30" />
+          <p className="text-sm">No providers match "{search}"</p>
         </div>
       )}
     </div>
