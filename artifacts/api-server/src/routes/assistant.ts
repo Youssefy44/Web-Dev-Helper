@@ -3,9 +3,11 @@ import Groq from "groq-sdk";
 
 const router = Router();
 
-const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY,
-});
+function getGroqClient(): Groq | null {
+  const apiKey = process.env.GROQ_API_KEY;
+  if (!apiKey) return null;
+  return new Groq({ apiKey });
+}
 
 const SYSTEM_PROMPT = `You are a knowledgeable assistant for Borland Groover (BG) appointment setter representatives at Patient Support Services. You answer questions accurately and concisely based on the BG reference knowledge below. Always be direct and practical — reps are on live calls and need fast answers.
 
@@ -217,9 +219,17 @@ router.post("/assistant", async (req, res) => {
     { role: "user", content: message.trim() },
   ];
 
+  const groq = getGroqClient();
+
   res.setHeader("Content-Type", "text/event-stream");
   res.setHeader("Cache-Control", "no-cache");
   res.setHeader("Connection", "keep-alive");
+
+  if (!groq) {
+    res.write(`data: ${JSON.stringify({ error: "AI assistant is not configured (no API key). Use the local knowledge base instead." })}\n\n`);
+    res.end();
+    return;
+  }
 
   try {
     const stream = await groq.chat.completions.create({

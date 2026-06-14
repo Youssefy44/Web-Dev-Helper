@@ -1,4 +1,5 @@
 import { Link, useLocation } from "wouter";
+import { useState, useEffect } from "react";
 import { 
   LayoutDashboard, 
   Search, 
@@ -15,6 +16,7 @@ import {
   Shield,
   Phone,
   Command,
+  Clock,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
@@ -41,6 +43,62 @@ const groups = [
   { id: "knowledge", label: "Knowledge Base" },
   { id: "reference", label: "Reference" },
 ];
+
+function useClock(timeZone: string) {
+  const [display, setDisplay] = useState({ time: "", period: "" });
+
+  useEffect(() => {
+    const update = () => {
+      const now = new Date();
+      const parts = new Intl.DateTimeFormat("en-US", {
+        timeZone,
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+      }).formatToParts(now);
+
+      const hour = parts.find((p) => p.type === "hour")?.value ?? "";
+      const min = parts.find((p) => p.type === "minute")?.value ?? "";
+      const period = parts.find((p) => p.type === "dayPeriod")?.value ?? "";
+      setDisplay({ time: `${hour}:${min}`, period });
+    };
+
+    update();
+    const id = setInterval(update, 1000);
+    return () => clearInterval(id);
+  }, [timeZone]);
+
+  return display;
+}
+
+function DualClock() {
+  const est = useClock("America/New_York");
+  const cairo = useClock("Africa/Cairo");
+
+  return (
+    <div className="mx-3 mb-2 rounded-md border border-border bg-muted/40 px-3 py-2">
+      <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-1.5 flex items-center gap-1">
+        <Clock className="w-2.5 h-2.5" /> Live Clocks
+      </p>
+      <div className="grid grid-cols-2 gap-1.5">
+        <div>
+          <p className="text-[10px] text-muted-foreground leading-none">🇺🇸 EST</p>
+          <p className="text-sm font-bold font-mono text-foreground leading-tight">
+            {est.time}
+            <span className="text-[10px] font-normal text-muted-foreground ml-0.5">{est.period}</span>
+          </p>
+        </div>
+        <div>
+          <p className="text-[10px] text-muted-foreground leading-none">🇪🇬 Cairo</p>
+          <p className="text-sm font-bold font-mono text-foreground leading-tight">
+            {cairo.time}
+            <span className="text-[10px] font-normal text-muted-foreground ml-0.5">{cairo.period}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 interface SidebarProps {
   onOpenSearch?: () => void;
@@ -75,6 +133,9 @@ export function Sidebar({ onOpenSearch }: SidebarProps) {
           </span>
         </button>
       </div>
+
+      {/* Dual Clock */}
+      <DualClock />
 
       <nav className="flex-1 px-3 overflow-y-auto pb-4 space-y-4">
         {groups.map((group) => {

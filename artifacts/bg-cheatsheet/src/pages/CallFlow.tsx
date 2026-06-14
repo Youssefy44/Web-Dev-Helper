@@ -762,8 +762,8 @@ export default function CallFlow() {
             </div>
           </div>
 
-          {/* Right Panel: Timer + Notes */}
-          <div className="space-y-4">
+          {/* Right Panel: Timer + Notes — sticky, independent scroll */}
+          <div className="space-y-4 xl:sticky xl:top-8 xl:self-start xl:max-h-[calc(100vh-5rem)] xl:overflow-y-auto xl:pr-1">
             {/* Live AHT Timer */}
             <div className="border border-border rounded-xl bg-card overflow-hidden">
               <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-muted/30">

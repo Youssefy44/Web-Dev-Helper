@@ -1,1 +1,2 @@
 - [BG App Architecture](bg-app-architecture.md) — key data files, local agent design, ⌘K palette structure
+- [BG Cheatsheet DB Setup](bg-cheatsheet-db.md) — notes table requires drizzle-kit push from lib/db; API server uses lazy Groq init to start without API key

@@ -1,4 +1,4 @@
-export type ProviderType = "MD" | "DO" | "NP" | "PA" | "MD, AGAF" | "MD, FACP, CPI" | "MD, FASGE" | "MD, FACG, CPE" | "MD, MPH" | "MD, MS" | "DO, MS" | "DO, MPH" | "MD, JD" | "MD, FRCP" | "MD, MHS" | "MD, MS, FASGE" | "MD, MPH, FACP" | "MD, FACP, PGDCA, MBA";
+export type ProviderType = "MD" | "DO" | "NP" | "PA" | "MD, AGAF" | "MD, FACP" | "MD, FACP, CPI" | "MD, FASGE" | "MD, FACG, CPE" | "MD, MPH" | "MD, MS" | "DO, MS" | "DO, MPH" | "MD, JD" | "MD, FRCP" | "MD, MHS" | "MD, MS, FASGE" | "MD, MPH, FACP" | "MD, FACP, PGDCA, MBA";
 export type Specialty = "Gastroenterology" | "Hepatology" | "GI & Hepatology" | "Bariatric & Weight Loss" | "Diabetes & Endocrinology" | "Allergy & Asthma";
 
 export interface Provider {

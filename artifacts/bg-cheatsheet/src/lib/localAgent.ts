@@ -654,6 +654,620 @@ Liver Disease, Liver Transplant, Cirrhosis, Alcoholic Cirrhosis, Hepatitis B or 
 • **DCEC** — Durbin Crossing Endo Center
 • **NCEC** — Nassau Crossing Endo Center`,
   },
+
+  // ── DAP NURSES ──
+  {
+    id: "dap-nurses",
+    category: "Contacts",
+    title: "DAP Nurse Team — Direct Lines",
+    keywords: ["dap nurse", "nurse", "direct line", "dap team", "clinical nurse", "sapresa", "april", "silcox", "wiggins", "dap phone"],
+    answer: `**DAP Nurse Team — Direct Lines:**
+• **Sapresa Smith** (DAP Nurse Lead) — 📞 904-385-5884
+• **April Silcox** — 📞 904-925-0753
+• **Jodi Wiggins** — 📞 904-342-5877
+
+Contact DAP nurses for:
+- Pre-procedure clinical questions
+- DAP eligibility clarification
+- Medical questionnaire follow-up
+- Complex DAP patient issues`,
+  },
+
+  // ── HOSPITAL PROCEDURE RULES ──
+  {
+    id: "hospital-procedure-reschedule",
+    category: "Scheduling",
+    title: "Hospital Procedure Reschedule / Cancel Rules",
+    keywords: ["hospital procedure", "hospital reschedule", "hospital cancel", "pss hospital", "hospital colonoscopy", "reschedule hospital"],
+    answer: `**Hospital Procedure — Reschedule/Cancel Rules:**
+
+| Type | Reschedule? | Cancel? | Task Needed? |
+|---|---|---|---|
+| DAP (incl. Flex) | Yes | Yes | Only if within 8 days |
+| Non-DAP | No | Yes | Yes — task clinical staff |
+| Advanced | No | No | Yes — task clinical staff |
+| HBT / Hemorrhoid Banding | No | Yes | Yes — task clinical staff |
+
+• **DAP colonoscopies scheduled by PSS** (us) may be rescheduled
+• All other hospital procedures: task to clinical staff
+• Hospital employee procedures → must be at their own hospital system
+• Always offer BG-owned ASCs first before any hospital`,
+  },
+
+  // ── TELEMEDICINE GEORGIA ──
+  {
+    id: "telemedicine-georgia",
+    category: "Scheduling",
+    title: "Telemedicine — Georgia-Licensed Providers",
+    keywords: ["telemedicine", "georgia", "telemed", "virtual", "telehealth", "virtual visit", "ga patient", "georgia patient"],
+    answer: `**Telemedicine — Georgia-Licensed Providers (can see GA patients via telehealth):**
+• Dr. Manolakis
+• Dr. Thompson
+• Dr. Whittaker
+• Dr. Phillips
+• Dr. Changela
+• Kelli Lamb, PA
+• Corrie Baker, PA-C
+
+⚠️ For Georgia patients needing telehealth, ONLY these providers are eligible.`,
+  },
+
+  // ── ASC NO-SHOW POLICY ──
+  {
+    id: "asc-no-show-policy",
+    category: "Scheduling",
+    title: "ASC No-Show / Late Cancellation Policy",
+    keywords: ["no show", "no-show", "asc no show", "procedure no show", "200", "fee", "72 hour", "cancellation policy", "late cancel"],
+    answer: `**ASC No-Show / Late Cancellation Policy:**
+• Fee: **$200** for procedure no-shows OR late cancellations
+• Cancellation must be made **at least 72 hours prior** to procedure to avoid the fee
+• If procedure is cancelled or no-show: **restart the scheduling process from scratch**
+• After 3PM: warm transfer to the ASC directly — do not handle yourself
+• Policy applies to all BG-owned ASCs (JCE SS, JCE RS, SAEC, OPEC, DSC)`,
+  },
+
+  // ── EGD WITH MIVU ──
+  {
+    id: "egd-mivu",
+    category: "Scheduling",
+    title: "EGD with MiVu — Do NOT Cancel",
+    keywords: ["mivu", "mivु", "egd mivu", "capsule", "mivu egd", "financial counselor", "capsule endoscopy"],
+    answer: `**EGD with MiVu Policy:**
+• Do **NOT** cancel an EGD with MiVu procedure yourself
+• If patient needs to cancel, has concerns, or questions about cost:
+  → **Warm transfer to Financial Counselor**
+• The Financial Counselor handles all MiVu-related scheduling changes
+• MiVu = capsule endoscopy device (patient swallows a pill-sized camera)`,
+  },
+
+  // ── LUMA WAITLIST ──
+  {
+    id: "luma-waitlist",
+    category: "Scheduling",
+    title: "Luma Waitlist System",
+    keywords: ["luma", "waitlist", "sooner appointment", "sooner", "luma health", "next available", "wait list"],
+    answer: `**Luma Waitlist System:**
+• Website: **next.lumahealth.io**
+• Used to add patients requesting a sooner appointment
+• Patient must **already have an appointment scheduled** to be added
+• **Office visits ONLY** — procedures are NOT added to Luma waitlist
+• Disposition code when adding: **Sooner Appointment / Waitlist**
+• System automatically texts patients when earlier slots open`,
+  },
+
+  // ── INTERPRETER WORKFLOW ──
+  {
+    id: "interpreter-workflow",
+    category: "Protocols",
+    title: "Interpreter / Language Line Workflow",
+    keywords: ["interpreter", "language", "spanish", "french", "translation", "language line", "language barrier", "arabic", "hindi", "vietnamese"],
+    answer: `**Interpreter Workflow:**
+
+**For Office Visits (OV):**
+1. Identify language need
+2. Connect language line interpreter before proceeding
+3. Document language preference in appointment notes
+
+**For ASC Procedures:**
+1. Note language need when scheduling
+2. ASC arranges their own interpreter for procedure day
+3. If patient has personal interpreter: document name and relationship
+
+**For Hospital Procedures:**
+1. Contact hospital interpreter services
+2. Document in procedure order notes
+
+⚠️ Language barrier is a valid reason to switch providers (to one who speaks the patient's language).
+
+**Providers with language skills:**
+• Spanish: Corregidor, Cortes, Feagans, Merritt, Munoz, Sanchez
+• French/Arabic: El Hajj, Khoury, Nassar, Pineau
+• Hindi: Butt, Changela, Comar, Misra, Rai
+• Vietnamese: Chau
+• Farsi: Lankarani
+• Russian: Norkina
+• Dutch: Hoogerwerf`,
+  },
+
+  // ── WILDFLOWER CHARITY ──
+  {
+    id: "wildflower-charity",
+    category: "Scheduling",
+    title: "Wildflower Charity Program",
+    keywords: ["wildflower", "charity", "st augustine charity", "soroka", "free care", "sliding scale", "wildflower health"],
+    answer: `**Wildflower Charity Program:**
+• Located at: **St. Augustine office ONLY**
+• Provider: **Dr. Soroka ONLY**
+• For qualifying low-income patients in the St. Augustine area
+• ⚠️ Do NOT schedule Wildflower patients with any other provider
+• ⚠️ Do NOT schedule Wildflower patients at any other location
+• Different from WeCare Jax — Wildflower is St. Augustine area only`,
+  },
+
+  // ── WECARE EXPANDED ──
+  {
+    id: "wecare-locations",
+    category: "Scheduling",
+    title: "WeCare Jax — Providers & Locations",
+    keywords: ["wecare", "we care jax", "wecare location", "wecare provider", "hoffman", "merrell", "sack", "tek", "we care providers"],
+    answer: `**WeCare Jax Program:**
+• For qualifying Jacksonville residents
+• Uses locations: St. Vincent's Riverside, Southside, and Memorial (MMC)
+
+**WE CARE ONLY Providers — Do NOT schedule regular patients with these doctors:**
+• Dr. Hoffman (Southside)
+• Dr. Merrell (Southside)
+• Dr. Sack (Southside)
+• Dr. Tek (Southside)
+
+These providers see WeCare patients EXCLUSIVELY.
+
+**Appointment Types:**
+• WeCare New Patient — new to BG + active WeCare referral
+• WeCare Follow-Up — established WeCare, seen within 1 year
+• WeCare Long Follow-Up — established WeCare, seen over 1 year ago OR transferring providers`,
+  },
+
+  // ── LATE PROCEDURE RESCHEDULE (3PM) ──
+  {
+    id: "late-procedure-reschedule",
+    category: "Scheduling",
+    title: "Late Procedure Reschedule (After 3PM Rule)",
+    keywords: ["3pm", "late reschedule", "late procedure", "after hours", "warm transfer asc", "same day reschedule", "after 3", "3 pm"],
+    answer: `**Late Procedure Reschedule — After 3PM Rule:**
+• If patient calls **after 3:00 PM** to reschedule or cancel a procedure:
+  → **Warm transfer directly to the ASC** — do NOT handle yourself
+• The ASC staff handles all late-notice procedure changes
+
+**BG-owned ASCs (transfer here after 3PM):**
+• JCE Southside — 904-739-0333
+• JCE Riverside — 904-387-6006
+• SAEC (St. Augustine) — 904-819-3803
+• OPEC (Orange Park) — call Orange Park office
+• DSC/SHEC (Santa Rosa Beach) — 850-267-2273
+
+• **Before 3PM:** you can reschedule normally through NextGen`,
+  },
+
+  // ── RECALL SCHEDULING ──
+  {
+    id: "recall-scheduling",
+    category: "Scheduling",
+    title: "Recall Scheduling Process",
+    keywords: ["recall", "recall scheduling", "recall call", "outbound", "outreach", "recall patient"],
+    answer: `**Recall Scheduling Process:**
+
+1. Verify patient identity (name + DOB)
+2. Confirm patient is still with BG (not transferred/left)
+3. Check patient age — meets provider minimum age
+4. Verify insurance is active and par with provider
+5. Confirm reason for recall (procedure type, follow-up type)
+6. Check DAP eligibility if colonoscopy recall
+7. Verify correct provider (same as last kept visit)
+8. Schedule appropriate appointment type (FU, LFU, DAP, etc.)
+9. Document the scheduled appointment
+10. Set next recall date if applicable
+
+**Reasons to STOP recall / not schedule:**
+• Patient deceased
+• Patient moved out of area
+• Patient on hospice / DNR
+• Provider retired
+• Insurance no longer participates`,
+  },
+
+  // ── PROVIDER SWITCH REASONS ──
+  {
+    id: "provider-switch-reasons",
+    category: "Scheduling",
+    title: "Valid Reasons to Switch Providers",
+    keywords: ["switch provider", "change provider", "transfer provider", "provider change", "new provider", "different doctor"],
+    answer: `**Valid Reasons to Switch Providers:**
+• Hospital move (patient now at different hospital system)
+• Within 8 days of prior appointment
+• Gender preference
+• Insurance change (new insurance not par with current provider)
+• Language barrier (patient needs provider who speaks their language)
+• Last visit more than 3 years ago
+• Location preference (closer office)
+• PCP request (referring doctor specifies different provider)
+• Provider dissatisfaction
+• Provider retired
+
+When switching providers, treat patient as **Long Follow-Up (LFU)** unless establishing new.`,
+  },
+
+  // ── HOSPITAL EMPLOYEE RULE ──
+  {
+    id: "hospital-employee-rule",
+    category: "Scheduling",
+    title: "Hospital Employee Procedure Rule",
+    keywords: ["hospital employee", "employee procedure", "hca employee", "bmc employee", "ascension employee", "baptist employee"],
+    answer: `**Hospital Employee Procedure Rule:**
+• Hospital employees must have procedures scheduled at **their own hospital system**
+• BMC (Baptist) employee → BMC facility (Beaches, Clay, Downtown, Nassau, or South)
+• HCA employee → HCA Memorial (MMC) or Orange Park Medical Center (OPMC)
+• Ascension employee → St. Vincent's Riverside, Southside, or St. Johns
+
+Always ask: "Do you work for a hospital?" if it seems relevant.`,
+  },
+
+  // ── AGE 45-49 RULE ──
+  {
+    id: "age-45-49-rule",
+    category: "Scheduling",
+    title: "Age 45–49 Screening Colonoscopy Rules",
+    keywords: ["45", "49", "screening", "45 to 49", "age rule", "ov required", "45-49", "age 45", "45 year"],
+    answer: `**Age 45–49 Screening Colonoscopy:**
+• **Volusia county providers:** OV (office visit) required BEFORE procedure for ages 45–49
+• **Jax DAP providers:** Ages 45–74 are DAP eligible — 45 is fine for DAP Jax
+• Age under 45: always OV first — not DAP eligible
+• Age over 74: OV first — not standard DAP
+
+**Minimum ages by selected providers:**
+• Min age 14: Costrini (BMC Nassau), Misra (HCA Memorial), Reid (BMC South)
+• Min age 15: Changela (BMC Downtown)
+• Min age 16: Feagans (Santa Rosa), Madhok (OP), Maniatis (Riverside), Merritt (Nocatee), Roychowdhury (OP)
+• Min age 17: Nassar
+• Min age 18: All others`,
+  },
+
+  // ── DAP FOLLOW-UP ──
+  {
+    id: "dap-follow-up",
+    category: "Scheduling",
+    title: "DAP Follow-Up (DAP F/U)",
+    keywords: ["dap follow", "dap fu", "dap follow-up", "post procedure follow up", "procedure follow up", "dap f/u"],
+    answer: `**DAP Follow-Up (DAP F/U):**
+• A post-procedure follow-up that can be scheduled without a prior OV
+• Only available if provider has **DAP F/U = YES** in scheduling guide
+• Some providers require an extender: "YES w/[Extender Name]"
+
+**Providers with DAP F/U (examples):**
+• Barlow, Cabi (w/Paulson), Comar (w/Parker or Barrett), Cooper (w/Taylor)
+• Di Teodoro, Etzkorn, Gopal (w/Dixon), Herman (w/Raymer)
+• Joseph (w/Parker), Manolakis (w/Johnson), Merritt, Munoz
+• Phillips (w/Johnson), Poland (w/Barrett), Reid (w/Kessenich)
+• Rostholder (w/Smith), Sanchez, Whittaker (w/Johnson)
+
+⚠️ If provider doesn't have DAP F/U, schedule regular Follow-Up instead`,
+  },
+
+  // ── BG ABBREVIATIONS ──
+  {
+    id: "bg-abbreviations",
+    category: "General",
+    title: "BG Approved Abbreviations",
+    keywords: ["abbreviation", "abbreviations", "abbr", "short form", "acronym", "what does", "stand for", "meaning"],
+    answer: `**BG Approved Abbreviations:**
+• **DAP** — Direct Access Procedure (procedure without prior OV)
+• **HFU** — Hospital Follow-Up
+• **FU** — Follow-Up (seen < 1 year ago)
+• **LFU** — Long Follow-Up (seen > 1 year ago)
+• **OV** — Office Visit
+• **NP** — New Patient
+• **EP** — Established Patient
+• **EGD** — Esophagogastroduodenoscopy (upper endoscopy)
+• **ASC** — Ambulatory Surgery Center
+• **PSS** — Patient Support Services (us — the call center)
+• **PCP** — Primary Care Physician
+• **BMC** — Baptist Medical Center
+• **HCA** — Hospital Corporation of America
+• **STV / ASN** — St. Vincent's / Ascension
+• **JCE** — Jacksonville Center for Endoscopy
+• **SAEC** — St. Augustine Endoscopy Center
+• **OPEC** — Orange Park Endoscopy Center
+• **DSC** — Destin Surgery Center
+• **SHEC** — Santa Rosa Beach procedure center
+• **SCV** — Surgery Center of Volusia
+• **MiVu** — Capsule endoscopy device (pill camera)
+• **D/C** — Discharge
+• **par** — Participating (in-network)
+• **non-par** — Non-Participating (out-of-network)
+• **AHT** — Average Handle Time
+• **HBT** — Hemorrhoid Banding Treatment`,
+  },
+
+  // ── SELF PAY ──
+  {
+    id: "self-pay-rates",
+    category: "Scheduling",
+    title: "Self-Pay / Uninsured Patients",
+    keywords: ["self pay", "self-pay", "uninsured", "no insurance", "cash pay", "self pay rate", "no coverage"],
+    answer: `**Self-Pay / Uninsured Patients:**
+• Document the self-pay rate quoted in appointment notes
+• Check the Self Pay box when scheduling in NextGen
+• **Volusia:** No new self-pay patients without approval — patient MUST have a local PCP
+• If patient asks about specific rates or payment plans: warm transfer to Financial Counselor
+• Self-pay rates vary by procedure — refer to the Self Pay Rates guide in SharePoint`,
+  },
+
+  // ── INSURANCE NAMES 2026 ──
+  {
+    id: "insurance-names-2026",
+    category: "Insurance",
+    title: "Insurance Plan Names & Networks 2026",
+    keywords: ["insurance name", "plan name", "bcbs", "aetna", "uhc", "united", "humana", "medicare", "medicaid", "blue cross", "cigna", "ambetter", "insurance list", "oscar", "molina", "sunshine", "wellcare", "tricare", "fep"],
+    answer: `**Common Insurance Plans (2026):**
+
+**Blue Cross Blue Shield (BCBS):**
+BCBS of Florida, BCBS Federal (FEP/BlueCard), Florida Blue, Florida Blue Medicare, Blue Options, Blue Select, Blue Care HMO, Healthy Blue Medicaid
+
+**United Healthcare (UHC):**
+UnitedHealthcare, UHC Choice Plus, UHC Options PPO, UHC Medicare Advantage
+⚠️ HCA facilities use UHC NPI: 730152
+
+**Aetna:** Aetna HMO, Aetna PPO, Aetna Medicare Advantage, Aetna CVS Health
+
+**Humana:** Humana HMO, Humana PPO, Humana Gold Plus, Humana Medicare Advantage
+
+**Cigna / Evernorth:** Cigna HMO, Cigna PPO, Cigna Connect
+
+**Government Programs:**
+Medicare Part B, Medicare Advantage, Florida Medicaid, Ambetter (Centene/Sunshine), Molina Healthcare, WellCare, Sunshine Health
+
+**Other:** Tricare (military), VA/Veterans, Oscar Health, Workers Compensation, Marketplace/ACA plans
+
+⚠️ **Volusia office is NON-PAR with Medicaid and Ambetter**
+⚠️ Always verify par status BEFORE scheduling`,
+  },
+
+  // ── VOICEMAIL WORKFLOW ──
+  {
+    id: "voicemail-workflow",
+    category: "Protocols",
+    title: "Voicemail / Talkdesk Callback Workflow",
+    keywords: ["voicemail", "callback", "talkdesk", "call back", "voicemail box", "return call", "left message"],
+    answer: `**Voicemail / Talkdesk Callback Workflow:**
+1. Listen to the full voicemail message
+2. Document caller name, phone number, and reason
+3. Attempt callback within the callback window
+4. If no answer: leave a message → Disposition: **Left Message**
+5. If second attempt with no answer → Disposition: **Call Back — No Answer**
+6. Document ALL attempts in call log
+7. Clinical voicemails route to office — do not attempt to handle clinical issues
+
+**Disposition codes for callbacks:**
+• Patient reached and helped → appropriate scheduling disposition
+• No answer after leaving message → "Left Message"
+• No answer, no message left (subsequent attempt) → "Call Back — No Answer"`,
+  },
+
+  // ── RUNNING ELIGIBILITY ──
+  {
+    id: "running-eligibility",
+    category: "Systems",
+    title: "Running Eligibility in NextGen",
+    keywords: ["eligibility", "run eligibility", "nextgen eligibility", "insurance verification", "verify insurance", "eligibility verification"],
+    answer: `**Running Eligibility in NextGen:**
+1. **Demographics tab** — verify name and DOB match insurance card
+2. **Load Insurance** — collect: policy name, policy number (mandatory), group number, eligibility phone, policyholder relationship, any secondary
+3. Right-click on insurance → Select "Eligibility Verification"
+4. Choose: payer, any requesting physician, Type of Service: "Health Benefit Plan Coverage" → Submit
+
+**If response is Inactive:**
+• Research and correct the information
+• Check if insurance is par before scheduling
+• Inform patient follow-up may be required
+
+**Cannot run eligibility electronically for some plans** — verify manually
+**Patient wants to discuss benefits** → warm transfer to Precert or Financial Counselor`,
+  },
+
+  // ── INSURANCE TO APPOINTMENT ──
+  {
+    id: "insurance-appointment",
+    category: "Systems",
+    title: "Adding Insurance to Appointments",
+    keywords: ["add insurance", "insurance appointment", "attach insurance", "insurance level", "insurance tab"],
+    answer: `**Adding Insurance to an Appointment (NextGen):**
+1. Open appointment → go to **Insurance/Diagnosis tab**
+2. Select patient insurance from listing box (must have green check = Active)
+3. Use the arrow button to move insurance over
+4. Attach **primary AND secondary** if both provided
+5. Self Pay: document quoted rate and check the Self Pay box
+
+**When to attach:**
+• ONLY when scheduling or rescheduling office visits or procedures
+• When scheduling procedure + required FU: attach insurance to BOTH appointments
+
+**Alerts:**
+• "This visit requires authorization" → bypass with "No" or "Close"
+• "Medicare should be attached" → bypass with "No" or "Close"
+• Green check missing → add check in "Available" or "Active" field
+• If still won't attach → notify your Team Lead`,
+  },
+
+  // ── DISPOSITION CODES ALL 14 ──
+  {
+    id: "all-disposition-codes",
+    category: "Disposition",
+    title: "All Disposition Codes — Complete List",
+    keywords: ["disposition", "code", "call type", "appointment confirmation", "general inquiry", "clinical message", "decline to schedule", "all codes"],
+    answer: `**All 14 Disposition Codes:**
+1. **Appointment Confirmation** — patient confirming/asking about existing appointment
+2. **Canceled Appointment** — patient calling to cancel
+3. **Appointment Scheduled** — new or established patient scheduled an appointment
+4. **Appointment Rescheduled** — patient changing date/time of existing appointment
+5. **Sooner Appointment / Waitlist** — patient wants a sooner slot (add to Luma)
+6. **Clinical Message** — patient needs to speak to clinical office staff
+7. **Urgent Clinical Transfer** — transferred to office based on urgent criteria
+8. **Non-Urgent Transfer** — non-clinical: insurance inquiry, demographics
+9. **Demographics** — updating name, address, insurance, HIPAA, contact prefs, email
+10. **Left Message** — left callback voicemail for patient
+11. **Call Back - No Answer** — callback attempt, no response from patient
+12. **Other** — any call not listed above (REQUIRES notes explaining the issue)
+13. **General Inquiry** — fax/office number, address, directions, provider lookup, no appointment booked; 3rd party checking appointment status
+14. **Decline to Schedule** — referral patient declined to schedule an appointment`,
+  },
+
+  // ── BALANCE RULES ──
+  {
+    id: "balance-rules",
+    category: "Scheduling",
+    title: "Outstanding Balance Rules",
+    keywords: ["balance", "outstanding balance", "collections", "debt", "owes money", "unpaid", "1000", "thousand"],
+    answer: `**Outstanding Balance Rules:**
+• Balance **over $1,000**: Cannot schedule a procedure → warm transfer to **Collections**
+• Smaller balances: May still schedule, document in notes
+• Patient disputes balance → warm transfer to Financial Services / Billing
+• ⚠️ Do NOT discuss specific balance amounts or payment arrangements — always transfer
+
+**Warm transfer to Collections — announce:**
+"I have [patient name] on the line. They have an outstanding balance that exceeds our scheduling threshold and need assistance."`,
+  },
+
+  // ── PROCEDURE CENTER ROUTING ──
+  {
+    id: "procedure-center-routing",
+    category: "Locations",
+    title: "Procedure Center Routing by Hospital Network",
+    keywords: ["procedure center", "routing", "asc routing", "which center", "bmc", "stv", "hca", "ascension", "hospital network", "procedure location"],
+    answer: `**Procedure Center Routing by Hospital Network:**
+
+**BMC (Baptist Medical Center) — BEAH network:**
+BMC Beaches (BMC B) | BMC Clay (BMC C) | BMC Downtown (BMC D) | BMC Nassau (BMC N) | BMC South (BMC S)
+
+**Ascension St. Vincent's — IOI network:**
+STV Riverside (STV RS) | STV Southside (STV SS) | STV St. Johns (STV SJ) | STV Clay (STV C)
+
+**HCA — UHC NPI 730152:**
+HCA Memorial (MMC) | HCA Orange Park (OPMC)
+
+**BG-Owned ASCs (offer these FIRST):**
+JCE SS (Southside) | JCE RS (Riverside) | SAEC (St. Augustine) | OPEC (Orange Park) | DSC/SHEC (Santa Rosa Beach)
+
+**Volusia:**
+Surgery Center of Volusia (arrive 1 hour prior — 386-760-8151)
+Advent/Florida Hospital Ormond Beach (arrive 2 hours prior)`,
+  },
+
+  // ── NO HOSPITAL PROCEDURES ──
+  {
+    id: "no-hospital-procedures",
+    category: "Scheduling",
+    title: "Providers — No Hospital Procedures",
+    keywords: ["no hospital", "hospital procedure", "corregidor", "etzkorn", "fleisher", "kohm", "sanchez", "hospital request", "no hospital procedure"],
+    answer: `**Providers Who Do NOT Perform Hospital Procedures:**
+• Dr. Corregidor (Southside)
+• Dr. Etzkorn (Southside)
+• Dr. Fleisher (BMC Downtown)
+• Dr. Kohm (Southside)
+• Dr. Sanchez (Southside)
+
+If a patient with one of these providers requests or requires a hospital procedure, they cannot be accommodated — discuss options with the patient and task clinical staff if needed.`,
+  },
+
+  // ── HEMORRHOID BANDING ──
+  {
+    id: "hemorrhoid-banding",
+    category: "Scheduling",
+    title: "Hemorrhoid Banding (HBT) Providers",
+    keywords: ["hemorrhoid", "banding", "hbt", "rubber band", "hemorrhoid banding", "hemorrhoid treatment"],
+    answer: `**Providers Who Perform Hemorrhoid Banding (HBT):**
+• Dr. Ahmadi (St. Augustine / Palatka)
+• Dr. Cortes (St. Augustine)
+• Dr. Manolakis (BMC Nassau)
+• Dr. Whittaker (BMC Nassau)
+
+**HBT Scheduling rules:**
+• HBT: No reschedule without task to clinical staff
+• Do NOT reschedule or cancel HBT without notifying clinical team`,
+  },
+
+  // ── KEY OFFICE CONTACTS ──
+  {
+    id: "key-office-contacts",
+    category: "Contacts",
+    title: "Key Office Phone Numbers & Contacts",
+    keywords: ["office number", "office phone", "contact", "call office", "reach office", "fax", "address", "phone number", "office contact"],
+    answer: `**Key BG Office Phone Numbers:**
+• **BG Main Line:** 904-398-7205
+• **Southside Office:** 904-398-7205
+• **St. Augustine Office:** 904-819-3800
+• **Orange Park Office:** 904-276-5700
+• **BMC Nassau / Nassau Crossing:** 904-261-2694
+• **BMC Beaches Office:** 904-241-8677
+• **Nocatee Office:** 904-280-1199
+• **Santa Rosa Beach Office:** 850-267-2273
+• **Port Orange / Volusia:** 386-760-1500
+• **JCE Riverside ASC:** 904-387-6006
+• **JCE Southside ASC:** 904-739-0333
+• **SAEC (St. Augustine ASC):** 904-819-3803
+• **Surgery Center of Volusia:** 386-760-8151
+
+**DAP Nurse Direct Lines:**
+• Sapresa Smith: 904-385-5884
+• April Silcox: 904-925-0753
+• Jodi Wiggins: 904-342-5877`,
+  },
+
+  // ── PATIENT PORTAL / PHREESIA ──
+  {
+    id: "patient-portal-phreesia",
+    category: "Systems",
+    title: "Patient Portal & Phreesia",
+    keywords: ["patient portal", "phreesia", "portal", "online checkin", "intake", "online forms", "check in"],
+    answer: `**Patient Portal & Phreesia:**
+• **Phreesia:** Online intake/check-in system — send intake link to new patients via email at time of scheduling
+• ⚠️ **CRITICAL:** Do NOT open anything else in Phreesia under any circumstances
+• Patient Portal: Patients can view records, send messages, pay bills online
+• For portal access questions or technical issues: warm transfer to appropriate department
+• Phreesia link goes to patient's email — confirm email address is correct when scheduling`,
+  },
+
+  // ── HFU $100 FEE ──
+  {
+    id: "hfu-non-par-fee",
+    category: "Scheduling",
+    title: "Hospital Follow-Up Non-Par Insurance Fee",
+    keywords: ["hfu fee", "100 dollar", "non-par fee", "hospital follow up fee", "100", "fee hospital"],
+    answer: `**Hospital Follow-Up — Non-Par Insurance Fee:**
+• A **$100 fee** applies for hospital follow-up appointments when the patient has non-participating (out-of-network) insurance
+• Inform the patient of the fee before scheduling
+• Document the disclosure in appointment notes`,
+  },
+
+  // ── GI SPECIALTY ONLY ──
+  {
+    id: "gi-specialty-only",
+    category: "General",
+    title: "What BG Treats — Specialty Scope",
+    keywords: ["what do we treat", "specialty", "scope", "what does bg", "gastro only", "allergy", "diabetes", "weight loss", "hepatology"],
+    answer: `**BG Treats (Specialty Scope):**
+✅ Gastroenterology (GI)
+✅ Hepatology (Liver)
+✅ GI & Hepatology combined
+✅ Diabetes & Endocrinology (limited)
+✅ Weight Loss / Bariatric (limited)
+✅ Allergy & Asthma (Bartram Park — Dr. Watkins's team only)
+
+⚠️ We do NOT handle: General medicine, cardiology, orthopedics, or other specialties
+⚠️ **Dr. Watkins (Allergy):** Never reschedule or cancel — always warm transfer to Allergy department
+
+**Referrals that ALWAYS need OV first (never direct-to-procedure):**
+Liver disease, cirrhosis, hepatitis B or C, fatty liver, NASH/MASLD/MASH, autoimmune hepatitis, abnormal LFTs, liver lesion, hepatic fibrosis, PBC`,
+  },
 ];
 
 function tokenize(text: string): string[] {
@@ -686,40 +1300,134 @@ function scoreEntry(entry: KnowledgeEntry, queryTokens: string[]): number {
   return score;
 }
 
+interface ProviderInfo {
+  lastName: string;
+  displayName: string;
+  office: string;
+  procedure: string;
+  dapColon: string;
+  dapEGD: string;
+  dapFU: string;
+  minAge: number;
+  extender: string;
+  languages: string;
+  notes: string;
+  isAlert?: boolean;
+  alertMsg?: string;
+}
+
+const PROVIDER_DIRECTORY: ProviderInfo[] = [
+  // JAX CORE
+  { lastName: "agresti", displayName: "Nicholas Agresti", office: "ASN SV Riverside / Orange Park", procedure: "JCE RS, OPEC", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "Sheri Hayes-Raulerson", languages: "", notes: "" },
+  { lastName: "ahmadi", displayName: "Anis Ahmadi", office: "St. Augustine / Palatka", procedure: "SAEC, Flagler", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "Does Hemorrhoid Banding" },
+  { lastName: "barlow", displayName: "William Barlow", office: "St. Augustine / Palatka", procedure: "SAEC, Flagler", dapColon: "YES", dapEGD: "NO", dapFU: "YES", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "brown", displayName: "Andrew Brown", office: "ASN SV Riverside / Orange Park", procedure: "JCE RS, OPEC, STV RS", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "Jori Taylor & Sheri Hayes-Raulerson", languages: "", notes: "" },
+  { lastName: "butt", displayName: "Aamir Butt", office: "Orange Park", procedure: "OPEC, OPMC", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "Garcia", languages: "Hindi, Urdu, Punjabi", notes: "" },
+  { lastName: "cabi", displayName: "M. Akin Cabi", office: "ASN SV Riverside", procedure: "JCE RS, STV RS", dapColon: "YES", dapEGD: "NO", dapFU: "YES w/Paulson", minAge: 18, extender: "Shenelle Paulson", languages: "", notes: "" },
+  { lastName: "cavacini", displayName: "Cavacini", office: "St. Augustine", procedure: "SAEC, Flagler", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "changela", displayName: "Changela", office: "BMC Downtown", procedure: "JCE RS, BMC D", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 15, extender: "Kelli Lamb, PA", languages: "Hindi, Gujarati", notes: "" },
+  { lastName: "chau", displayName: "Chau", office: "Southside", procedure: "JCE SS, STV SS", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "Vietnamese", notes: "" },
+  { lastName: "chisholm", displayName: "Chisholm", office: "BMC Clay", procedure: "OPEC, STV C, BMC C", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "comar", displayName: "Comar", office: "BMC South", procedure: "JCE SS, BMC S", dapColon: "YES", dapEGD: "YES", dapFU: "YES w/Parker or Barrett", minAge: 18, extender: "Parker & Barrett", languages: "Hindi, Punjabi", notes: "" },
+  { lastName: "cooper", displayName: "Scott Cooper", office: "Southside / ASN SV Riverside", procedure: "JCE SS, STV RS", dapColon: "YES", dapEGD: "YES", dapFU: "YES w/Taylor", minAge: 18, extender: "Jori Taylor", languages: "", notes: "" },
+  { lastName: "corregidor", displayName: "Ana Corregidor", office: "Southside", procedure: "JCE SS, STV SS", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "Spanish", notes: "No hospital procedures" },
+  { lastName: "cortes", displayName: "Rafael Cortes", office: "St. Augustine", procedure: "SAEC, Flagler", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "Spanish, Italian", notes: "Does Hemorrhoid Banding" },
+  { lastName: "costrini", displayName: "Costrini", office: "BMC Nassau", procedure: "JCE RS, BMC N", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 14, extender: "None", languages: "", notes: "" },
+  { lastName: "desai", displayName: "Desai", office: "Santa Rosa Beach", procedure: "DSC, SHEC", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "Miles", languages: "", notes: "" },
+  { lastName: "di teodoro", displayName: "Linda Di Teodoro", office: "Southside", procedure: "JCE SS, BMC D", dapColon: "YES", dapEGD: "YES", dapFU: "YES", minAge: 18, extender: "Gonzalez", languages: "", notes: "" },
+  { lastName: "el hajj", displayName: "Nassim El Hajj", office: "HCA Memorial / Southside", procedure: "JCE SS, MMC", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "French, Arabic", notes: "" },
+  { lastName: "etzkorn", displayName: "Kyle Etzkorn", office: "Southside", procedure: "JCE SS", dapColon: "YES", dapEGD: "NO", dapFU: "YES", minAge: 18, extender: "None", languages: "", notes: "No hospital procedures. CMO/Research Director." },
+  { lastName: "feagans", displayName: "Feagans", office: "Santa Rosa Beach", procedure: "DSC, SHEC", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 16, extender: "Miles", languages: "Spanish", notes: "" },
+  { lastName: "fleisher", displayName: "Fleisher", office: "BMC Downtown", procedure: "JCE SS", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "No hospital procedures" },
+  { lastName: "foody", displayName: "William Foody", office: "St. Augustine", procedure: "SAEC, Flagler", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "gassert", displayName: "Daniel Gassert", office: "St. Augustine / Palatka", procedure: "SAEC, Flagler", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "gopal", displayName: "Vikram Gopal", office: "Southside", procedure: "JCE SS, BMC D", dapColon: "YES", dapEGD: "YES", dapFU: "YES w/Dixon", minAge: 18, extender: "Dixon", languages: "", notes: "" },
+  { lastName: "gorrepati", displayName: "Gorrepati", office: "Orange Park", procedure: "BMC C, OPMC", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "goyal", displayName: "Goyal", office: "BMC Downtown", procedure: "JCE RS, BMC D", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "gupta", displayName: "Gupta", office: "HCA Memorial", procedure: "JCE SS, MMC", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "harvey", displayName: "Harvey", office: "Santa Rosa Beach", procedure: "DSC, SHEC", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "Miles", languages: "", notes: "⚠️ Doctor retiring — do not schedule" },
+  { lastName: "herman", displayName: "Herman", office: "BMC Clay", procedure: "OPEC, STV C, BMC C", dapColon: "YES", dapEGD: "YES", dapFU: "YES w/Raymer", minAge: 18, extender: "Rachel Raymer", languages: "", notes: "" },
+  { lastName: "hoffman", displayName: "Hoffman", office: "Southside", procedure: "N/A", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "WE CARE PATIENTS ONLY — do NOT schedule regular patients", isAlert: true, alertMsg: "WE CARE ONLY — Do not schedule regular patients" },
+  { lastName: "hoogerwerf", displayName: "Sandra Hoogerwerf", office: "St. Augustine", procedure: "SAEC, Flagler", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "Dutch", notes: "" },
+  { lastName: "ibach", displayName: "Ibach", office: "BMC Beaches", procedure: "JCE SS, BMC B", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "Roche (No new patients)", languages: "", notes: "" },
+  { lastName: "joseph", displayName: "Joseph", office: "BMC South", procedure: "JCE SS, BMC S", dapColon: "YES", dapEGD: "NO", dapFU: "YES w/Parker", minAge: 18, extender: "Parker", languages: "", notes: "" },
+  { lastName: "khoury", displayName: "Khoury", office: "BMC Beaches", procedure: "JCE SS, BMC B", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "None", languages: "Lebanese, Arabic, French", notes: "" },
+  { lastName: "kimberly", displayName: "Kimberly", office: "Orange Park", procedure: "OPEC, OPMC", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "knox", displayName: "Knox", office: "BMC Clay", procedure: "OPEC, BMC C, STV C", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "kohm", displayName: "Kohm", office: "Southside", procedure: "JCE SS", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "Dixon", languages: "", notes: "No hospital procedures" },
+  { lastName: "lankarani", displayName: "Ali Lankarani", office: "ASN SV Riverside", procedure: "JCE RS, OPEC, STV RS, BMC S", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "Jori Taylor & Sheri Hayes-Raulerson", languages: "Farsi", notes: "" },
+  { lastName: "madhok", displayName: "Madhok", office: "Orange Park", procedure: "OPEC, OPMC", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 16, extender: "None", languages: "Hindi, Punjabi", notes: "" },
+  { lastName: "maniatis", displayName: "Maniatis", office: "ASN SV Riverside", procedure: "JCE RS, STV RS", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 16, extender: "None", languages: "", notes: "" },
+  { lastName: "manolakis", displayName: "Manolakis", office: "BMC Nassau", procedure: "JCE RS, BMC N", dapColon: "YES", dapEGD: "YES", dapFU: "YES w/Johnson", minAge: 18, extender: "Johnson", languages: "", notes: "Does Hemorrhoid Banding. Georgia telehealth eligible." },
+  { lastName: "mcgaw", displayName: "Camille McGaw", office: "St. Augustine", procedure: "SAEC, Flagler", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "merrell", displayName: "Merrell", office: "Southside", procedure: "N/A", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "WE CARE PATIENTS ONLY", isAlert: true, alertMsg: "WE CARE ONLY — Do not schedule regular patients" },
+  { lastName: "merritt", displayName: "Merritt", office: "Nocatee", procedure: "JCE SS, BMC S, STV SJ", dapColon: "YES", dapEGD: "YES", dapFU: "YES", minAge: 16, extender: "None", languages: "Spanish", notes: "" },
+  { lastName: "misra", displayName: "Misra", office: "HCA Memorial", procedure: "JCE SS, MMC", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 14, extender: "None", languages: "Hindi", notes: "" },
+  { lastName: "munoz", displayName: "Munoz", office: "Southside", procedure: "JCE SS, STV SS", dapColon: "YES", dapEGD: "YES", dapFU: "YES", minAge: 18, extender: "None", languages: "Spanish", notes: "" },
+  { lastName: "naseemuddin", displayName: "Naseemuddin", office: "BMC Downtown", procedure: "JCE SS, BMC D", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "nassar", displayName: "Nassar", office: "HCA Memorial / Southside", procedure: "JCE SS, MMC", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 17, extender: "None", languages: "French, Arabic", notes: "" },
+  { lastName: "navas", displayName: "Navas", office: "Nocatee", procedure: "SAEC, STV SJ", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "norkina", displayName: "Norkina", office: "BMC Beaches", procedure: "JCE SS, BMC B", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "Roche (No new patients)", languages: "Russian", notes: "" },
+  { lastName: "patel a", displayName: "Patel, A.", office: "ASN SV Riverside", procedure: "JCE RS, STV RS", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "Jennifer Marzoug", languages: "", notes: "" },
+  { lastName: "patel kr", displayName: "Patel, Kr.", office: "Southside / HCA Memorial", procedure: "JCE SS, MMC", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "patel v", displayName: "Patel, V.", office: "BMC Clay", procedure: "OPEC, STV C, BMC C", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "patel y", displayName: "Patel, Y.", office: "Nocatee", procedure: "SAEC, STV SJ", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "phillips", displayName: "Phillips", office: "BMC Nassau", procedure: "JCE RS, BMC N", dapColon: "YES", dapEGD: "YES", dapFU: "YES w/Johnson", minAge: 18, extender: "Johnson", languages: "", notes: "Georgia telehealth eligible." },
+  { lastName: "pineau", displayName: "Pineau", office: "St. Augustine", procedure: "SAEC, JCE SS, Flagler", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "None", languages: "French", notes: "" },
+  { lastName: "poland", displayName: "Poland", office: "BMC South", procedure: "JCE SS, BMC S", dapColon: "YES", dapEGD: "YES", dapFU: "YES w/Barrett", minAge: 18, extender: "Barrett", languages: "", notes: "" },
+  { lastName: "racho", displayName: "Ronald Racho", office: "BMC South", procedure: "JCE SS, BMC S", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "rai", displayName: "Rai", office: "Orange Park", procedure: "OPEC, OPMC", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "None", languages: "Hindi", notes: "" },
+  { lastName: "rawls", displayName: "Rawls", office: "ASN SV Riverside", procedure: "JCE RS, STV RS", dapColon: "YES", dapEGD: "YES", dapFU: "NO", minAge: 18, extender: "Shenelle Paulson", languages: "", notes: "" },
+  { lastName: "reid", displayName: "Marie Reid", office: "BMC South", procedure: "JCE SS, BMC S", dapColon: "YES", dapEGD: "NO", dapFU: "YES w/Kessenich", minAge: 14, extender: "Kessenich", languages: "", notes: "" },
+  { lastName: "ross", displayName: "Ross", office: "Southside", procedure: "JCE SS, STV SS", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "rostholder", displayName: "Emily Rostholder", office: "Southside", procedure: "JCE SS, BMC D", dapColon: "YES", dapEGD: "NO", dapFU: "YES w/Smith", minAge: 18, extender: "Smith (Corrie Baker PA-C)", languages: "", notes: "" },
+  { lastName: "roychowdhury", displayName: "Roychowdhury", office: "Orange Park", procedure: "OPEC, OPMC", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 16, extender: "Garcia", languages: "Hindi, Bengali", notes: "" },
+  { lastName: "sack", displayName: "Sack", office: "Southside", procedure: "N/A", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "WE CARE PATIENTS ONLY", isAlert: true, alertMsg: "WE CARE ONLY — Do not schedule regular patients" },
+  { lastName: "sanchez", displayName: "Sanchez", office: "Southside", procedure: "JCE SS", dapColon: "YES", dapEGD: "NO", dapFU: "YES", minAge: 18, extender: "None", languages: "Spanish", notes: "No hospital procedures" },
+  { lastName: "soroka", displayName: "Soroka", office: "St. Augustine", procedure: "SAEC, Flagler", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "Wildflower charity provider (St. Augustine only)" },
+  { lastName: "tek", displayName: "Tek", office: "Southside", procedure: "N/A", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "WE CARE PATIENTS ONLY", isAlert: true, alertMsg: "WE CARE ONLY — Do not schedule regular patients" },
+  { lastName: "villanueva", displayName: "Steven Villanueva", office: "St. Augustine", procedure: "SAEC, Flagler", dapColon: "YES", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "westerveld", displayName: "Westerveld", office: "Nocatee", procedure: "SAEC, JCE SS, BMC S, STV SJ", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "None", languages: "", notes: "" },
+  { lastName: "whittaker", displayName: "Whittaker", office: "BMC Nassau", procedure: "JCE RS, BMC N", dapColon: "YES", dapEGD: "NO", dapFU: "YES w/Johnson", minAge: 18, extender: "Johnson", languages: "", notes: "Does Hemorrhoid Banding. Georgia telehealth eligible." },
+  // VOLUSIA
+  { lastName: "agnone", displayName: "Louis Agnone", office: "Port Orange / Ormond Beach (Volusia)", procedure: "Surgery Center of Volusia, Advent Ormond Beach", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "Cremata, Porter, Satterfield", languages: "", notes: "No new self-pay without approval. Must have local PCP." },
+  { lastName: "deshpande", displayName: "Vrushak Deshpande", office: "Port Orange / Ormond Beach (Volusia)", procedure: "Surgery Center of Volusia, Advent Ormond Beach", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "Cremata, Porter, Satterfield", languages: "", notes: "45–49 require OV before procedure" },
+  { lastName: "jinjuvadia", displayName: "Jinjuvadia", office: "Port Orange / Ormond Beach (Volusia)", procedure: "Surgery Center of Volusia", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "Cremata, Porter, Satterfield", languages: "Hindi, Gujarati", notes: "No new self-pay without approval. OV req 45–49." },
+  { lastName: "ricci", displayName: "Ricci", office: "Port Orange / Ormond Beach (Volusia)", procedure: "Surgery Center of Volusia", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "Cremata, Porter, Satterfield", languages: "Italian", notes: "No new self-pay without approval. OV req 45–49." },
+  { lastName: "sorathia", displayName: "Sorathia", office: "Port Orange / Ormond Beach (Volusia)", procedure: "Surgery Center of Volusia", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 18, extender: "Cremata, Porter, Satterfield", languages: "Hindi, Urdu", notes: "No new self-pay without approval. OV req 45–49." },
+  // SPECIAL
+  { lastName: "watkins", displayName: "Raquel Watkins", office: "Bartram Park", procedure: "N/A — Allergy only", dapColon: "NO", dapEGD: "NO", dapFU: "NO", minAge: 0, extender: "Allergy team", languages: "", notes: "ALLERGY DEPT ONLY", isAlert: true, alertMsg: "⚠️ NEVER reschedule or cancel — ALWAYS warm transfer to Allergy" },
+];
+
 function findProviderAnswer(query: string): string | null {
-  const q = query.toLowerCase();
+  const nameTokens = tokenize(query);
+  if (nameTokens.length === 0) return null;
 
-  const doctorMatch = q.match(/dr\.?\s+([a-z]+)/i);
-  const nameTokens = tokenize(q);
+  const match = PROVIDER_DIRECTORY.find((p) => {
+    const lastParts = p.lastName.split(" ");
+    const displayParts = p.displayName.toLowerCase().split(" ");
+    return [...lastParts, ...displayParts].some((part) =>
+      nameTokens.some((t) => t.length >= 3 && (t.includes(part) || part.includes(t)))
+    );
+  });
 
-  const providerNames = [
-    { name: "Vikram Gopal", location: "Southside/Orange Park", extender: "Catherine Bailey, PA-C", specialty: "Gastroenterology" },
-    { name: "Emily Rostholder", location: "Southside/Orange Park", extender: "Corrie Baker, PA-C", specialty: "Gastroenterology" },
-    { name: "Daniel Gassert", location: "St. Augustine", extender: "Alice Carter, APRN", specialty: "Gastroenterology" },
-    { name: "Nicholas Agresti", location: "Riverside/Orange Park", extender: "Sheri Hayes-Raulerson, APRN", specialty: "Gastroenterology" },
-    { name: "Andrew Brown", location: "Riverside/Orange Park", extender: "Sheri Hayes-Raulerson, APRN", specialty: "Gastroenterology" },
-    { name: "Ali Lankarani", location: "Riverside/Orange Park", extender: "Sheri Hayes-Raulerson, APRN", specialty: "Gastroenterology" },
-    { name: "Louis Agnone", location: "Port Orange/Ormond Beach", extender: "Dottie Porter, Travis Satterfield, Marika Walker (PA-C)", specialty: "Gastroenterology" },
-    { name: "Ketul Patel", location: "Port Orange/Ormond Beach", extender: "Dottie Porter, Travis Satterfield, Marika Walker (PA-C)", specialty: "Gastroenterology" },
-    { name: "Vrushak Deshpande", location: "Port Orange/Ormond Beach", extender: "Dottie Porter, Travis Satterfield, Marika Walker (PA-C)", specialty: "Gastroenterology" },
-    { name: "Raquel Watkins", location: "Bartram Park", extender: "None — Allergy dept only", specialty: "Allergy & Asthma" },
-    { name: "Kyle Etzkorn", location: "Southside/Santa Rosa Beach", extender: "None listed", specialty: "Gastroenterology — CMO/Research Director" },
-    { name: "Ronald Racho", location: "Durbin Crossing", extender: "None listed", specialty: "Gastroenterology" },
-    { name: "William Barlow", location: "St. Augustine", extender: "None listed", specialty: "Gastroenterology" },
-    { name: "Mary Barbara", location: "Nassau Crossing", extender: "None listed", specialty: "Gastroenterology" },
-  ];
+  if (!match) return null;
 
-  for (const p of providerNames) {
-    const nameParts = p.name.toLowerCase().split(" ");
-    if (nameParts.some((part) => nameTokens.some((t) => t.includes(part) || part.includes(t)))) {
-      let answer = `**Dr. ${p.name}**\n• Specialty: ${p.specialty}\n• Location(s): ${p.location}\n• Extender: ${p.extender}`;
-      if (p.name.includes("Watkins")) {
-        answer += "\n\n⚠️ **Never reschedule or cancel Dr. Watkins appointments** — always warm transfer to Allergy.";
-      }
-      return answer;
-    }
+  const title = match.displayName.includes(",") ? match.displayName : `Dr. ${match.displayName}`;
+
+  let answer = `**${title}**\n`;
+  answer += `• Office: ${match.office}\n`;
+  answer += `• Procedure Centers: ${match.procedure}\n`;
+  answer += `• DAP Colonoscopy: **${match.dapColon}** | DAP EGD: **${match.dapEGD}** | DAP F/U: **${match.dapFU}**\n`;
+  answer += `• Min Age: ${match.minAge}\n`;
+  answer += `• Extender: ${match.extender || "None"}\n`;
+  if (match.languages) answer += `• Languages: ${match.languages}\n`;
+  if (match.notes) answer += `• Notes: ${match.notes}\n`;
+  if (match.isAlert && match.alertMsg) {
+    answer += `\n⚠️ **${match.alertMsg}**`;
   }
-  return null;
+
+  return answer;
 }
 
 export function getAnswer(question: string, history: Message[]): string {
